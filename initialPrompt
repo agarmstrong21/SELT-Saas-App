@@ -1,0 +1,29 @@
+This quick note should stand in as the first "customer contact" for the SELT 2020 project.  Your teams should start meeting NOW.  The project has started !! :)
+
+ 
+
+My extended family (my parents, my college age children) has weekly zoom meetings where each of us is located in different cities.
+
+ 
+
+We love to play card games, but currently the social distancing requirements prevent us from being in the same room.
+
+ 
+
+I would like your team to develop a SAAS based web interface to facilitate a simulated deck of cards, and simulated way of exchanging cards between players, and various "sources" (i.e. draw piles) and sinks (i.e. discard piles, player winning piles, etc.).
+
+ 
+
+The solution MUST have a database driven persistence layer.  (HINT: You may want to think of this as an "inventory" system for a warehouse, where individual cards must be monitored, and moved around between shelving units.)
+
+ 
+
+NOTE: YOU MUST NOT  IMPLEMENT RULES TO CARD GAMES, but rather you must implement features that facilitate gameplay were the participants understand and self monitor following the rules.
+
+ 
+
+Constraints on the final project will (purposefully) be slowly released over the next few weeks, and some details of the project will (purposefully) be changed as we near the end of the project.
+
+ 
+
+The PRIMARY goal of the final project is to exercise good software engineering process. Your teams must demonstrate both product and process to the instructors.
