@@ -13,5 +13,13 @@ Scenario:  Create the Four of Hearts
   Then I should have a card entry with the suit "Hearts" and value "Four" in the database
 
 Scenario:  Create the Six of Spades
-  When I have created a card with the suit "Diamonds" and the value "King"
-  Then I should have a card entry with the suit "Diamonds" and value "King" in the database
+  When I have created a card with the suit "Spades" and the value "Six"
+  Then I should have a card entry with the suit "Spades" and value "Six" in the database
+
+Scenario:  Try to create a card with a wrong suit
+  When I have created a card with the suit "Jokers" and the value "Six"
+  Then I should not have a card entry with the suit "Jokers" and value "Six" in the database
+
+Scenario:  Try to create a card with a wrong value
+  When I have created a card with the suit "Spades" and the value "Eleven"
+  Then I should not have a card entry with the suit "Spades" and value "Eleven" in the database
