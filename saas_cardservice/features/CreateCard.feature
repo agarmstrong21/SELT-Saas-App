@@ -23,3 +23,7 @@ Scenario:  Try to create a card with a wrong suit
 Scenario:  Try to create a card with a wrong value
   When I have created a card with the suit "Spades" and the value "Eleven"
   Then I should not have a card entry with the suit "Spades" and value "Eleven" in the database
+
+Scenario:  Try to create a card with a empty values
+  When I have created a card with the suit "" and the value ""
+  Then I should not have a card entry with the suit "" and value "" in the database
