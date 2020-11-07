@@ -1,4 +1,5 @@
 class Card < ApplicationRecord
+  belongs_to :pile
   def self.create_card!(i)
     possibleSuits = ["Diamonds","Spades","Hearts","Clubs"]
     possibleValues = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
@@ -9,6 +10,5 @@ class Card < ApplicationRecord
     if isValue and isSuit
       Card.create!(i)
     end
-
   end
 end
