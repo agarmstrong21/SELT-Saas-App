@@ -10,7 +10,7 @@ u# FROM https://raw.githubusercontent.com/github/gitignore/master/Ruby.gitignore
 /spec/examples.txt
 /test/tmp/
 /test/version_tmp/
-/tmp/
+/tmp/git
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -101,8 +101,9 @@ bower.json
 .byebug_history
 
 # Ignore node_modules
-node_modules/
+/node_modules/
 
+/tmp/
 
 #---------------------------------------------------------------------
 # https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
