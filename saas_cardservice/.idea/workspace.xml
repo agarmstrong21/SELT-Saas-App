@@ -19,13 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="536e04b2-10e9-4d99-a0fd-73ae7c57a924" name="Default Changelist" comment="Added the Test Cases for Sink. Covers basic expectations.">
+    <list default="true" id="536e04b2-10e9-4d99-a0fd-73ae7c57a924" name="Default Changelist" comment="Added functionality to the cucumber tests.">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/pile.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/pile.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/CreateSink.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/CreateSink.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/step_definitions/sink_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/sink_steps.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +274,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604507107277</updated>
-      <workItem from="1604507108475" duration="14093000" />
+      <workItem from="1604507108475" duration="15677000" />
     </task>
     <task id="LOCAL-00001" summary="Added the Test Cases for Sink. Covers basic expectations.">
       <created>1604863006261</created>
@@ -287,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604863006261</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added functionality of Sink to pile.rb">
+      <created>1604867813021</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604867813022</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added functionality to the cucumber tests.">
+      <created>1604868010700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604868010700</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +316,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added the Test Cases for Sink. Covers basic expectations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the Test Cases for Sink. Covers basic expectations." />
+    <MESSAGE value="Added functionality of Sink to pile.rb" />
+    <MESSAGE value="Added functionality to the cucumber tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to the cucumber tests." />
   </component>
   <component name="WindowStateProjectService">
     <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1604864030448">
@@ -333,14 +345,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="86" key="SettingsEditor/-1920.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1604508038330" />
-    <state x="-1360" y="277" key="Vcs.Push.Dialog.v2" timestamp="1604863012980">
+    <state x="-1360" y="277" key="Vcs.Push.Dialog.v2" timestamp="1604868012687">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1360" y="277" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604863012980" />
-    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604862967806">
+    <state x="-1360" y="277" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604868012687" />
+    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604869071683">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604862967806" />
+    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604869071683" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604714489342">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
