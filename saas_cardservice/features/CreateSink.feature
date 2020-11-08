@@ -25,6 +25,11 @@ Feature: Creation of Sink
     When I have created a sink
     Then I expect there to be "52" Cards total
 
+  # Scenario to check if the sink has 16 cards
+  Scenario: I have a sink with 16 cards
+    When I have created a sink
+    Then I expect there to be "16" Cards total
+
   # Scenario to check if the sink has the Ace of Spades
   Scenario: I have a sink with the Ace of Spades
     When I have created a sink
@@ -48,19 +53,19 @@ Feature: Creation of Sink
   # Scenario to check if the sink has 1 Ace
   Scenario: I have a sink with 1 Ace
     When I have created a sink
-    Then I expect there to be "1" "Aces"
+    Then I expect there to be "1" "Ace"
 
   # Scenario to check if the sink has 2 Aces
   Scenario: I have a sink with 2 Aces
     When I have created a sink
-    Then I expect there to be "2" "Aces"
+    Then I expect there to be "2" "Ace"
 
   # Scenario to check if the sink has 3 Aces
   Scenario: I have a sink with 3 Aces
     When I have created a sink
-    Then I expect there to be "3" "Aces"
+    Then I expect there to be "3" "Ace"
 
   # Scenario to check if the sink has 4 Aces
   Scenario: I have a sink with 4 Aces
     When I have created a sink
-    Then I expect there to be "4" "Aces"
+    Then I expect there to be "4" "Ace"
