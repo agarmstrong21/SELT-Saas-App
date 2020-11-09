@@ -1,6 +1,7 @@
 class Pile < ApplicationRecord
   has_many :cards, dependent: :destroy
 
+  # Creating deck method that will create a pile named 'deck' This will contain all 52 cards needed for a full deck.
   def self.create_deck!
     possibleSuits = ["Diamonds","Spades","Hearts","Clubs"]
     possibleValues = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
