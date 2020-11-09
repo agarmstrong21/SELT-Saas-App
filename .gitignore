@@ -103,7 +103,7 @@ bower.json
 # Ignore node_modules
 /node_modules/
 
-/tmp/
+saas_cardservice/tmp/
 
 #---------------------------------------------------------------------
 # https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
