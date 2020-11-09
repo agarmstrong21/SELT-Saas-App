@@ -6,6 +6,7 @@
 
 require 'cucumber/rails'
 require 'rspec/expectations'
+ENV['CUCUMBER_PUBLISH_TOKEN'] = '8a151628-d381-4081-a35d-387ab99b3ced'
 # frozen_string_literal: true
 
 # Capybara defaults to CSS3 selectors rather than XPath.
