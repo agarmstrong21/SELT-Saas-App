@@ -15,4 +15,9 @@ class Pile < ApplicationRecord
     end
   end
 
+  # Creating Sink method that will create a pile named 'Sink.' This will contain no cards until cards are added.
+  def self.create_sink!
+    Pile.create!({Name: 'Sink'})
+  end
+
 end
