@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="536e04b2-10e9-4d99-a0fd-73ae7c57a924" name="Default Changelist" comment="Added functionality to the cucumber tests.">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/CreateSink.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/CreateSink.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/sink_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/sink_steps.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/test.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +277,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604507107277</updated>
-      <workItem from="1604507108475" duration="16438000" />
+      <workItem from="1604507108475" duration="18026000" />
     </task>
     <task id="LOCAL-00001" summary="Added the Test Cases for Sink. Covers basic expectations.">
       <created>1604863006261</created>
@@ -349,10 +352,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1360" y="277" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604868012687" />
-    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604869071683">
+    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604870772248">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604869071683" />
+    <state x="-1285" y="278" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1604870772248" />
     <state x="-1225" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604869902199">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>

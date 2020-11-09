@@ -18,9 +18,6 @@ Then(/^I expect there to be some cards$/) do
   # Finding the correct Sink
   sink = Pile.all.find_by(Name: 'Sink')
 
-  # Creates the Ace of Diamonds,AKA random card
-  Card.create!({value: 'Ace', suit: 'Diamonds', pile: sink})
-
   # Checks if there is at least one card in the sink
   counter = 0
   sink.cards.each do
@@ -33,36 +30,17 @@ Then(/^I expect there to be "([^"]*)" Cards total$/) do |number|
   # Finding the correct Sink
   sink = Pile.all.find_by(Name: 'Sink')
 
-  # Adding the 'number' amount of cards to the deck
-  suits = ["Diamonds","Spades","Hearts","Clubs"]
-  values = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
-
-  number = number.to_i
-  counter = number
-
-  suits.each do |suit|
-    values.each do |value|
-      unless counter.eql? 0
-        Card.create!({value: value, suit: suit, pile: sink})
-        counter -= 1
-      end
-    end
-  end
-
   # Checking amount of cards in sink
   counter = 0
   sink.cards.each do
     counter += 1
   end
-  expect(counter).to equal(number)
+  expect(counter).to equal(number.to_i)
 end
 
 Then(/^I expect there to be the "([^"]*)" of "([^"]*)"$/) do |given_value, given_suit|
   # Finding the correct Sink
   sink = Pile.all.find_by(Name: 'Sink')
-
-  # Creating the one given card
-  Card.create!({value: given_value, suit: given_suit, pile: sink})
 
   # Checking to see if that given card is found in the sink
   counter = 0
@@ -77,26 +55,38 @@ Then(/^I expect there to be "([^"]*)" "([^"]*)"$/) do |number, given_value|
   # Finding the correct Sink
   sink = Pile.all.find_by(Name: 'Sink')
 
-  # Adding the 'number' amount of cards to the deck
-  suits = ["Diamonds","Spades","Hearts","Clubs"]
-  values = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
-
-  number = number.to_i
-  counter = number
-  suits.each do |suit|
-    unless counter.eql? 0
-      values.each do |value|
-        Card.create!({value: value, suit: suit, pile: sink})
-      end
-      counter -= 1
-    end
-  end
-
-
   # Checking amount of cards in sink that match the given_value
   counter = 0
   sink.cards.each do |card|
     counter += 1 if card.value.eql? given_value
   end
-  expect(counter).to equal(number)
+  expect(counter).to equal(number.to_i)
+end
+
+And(/^I have put the "([^"]*)" of "([^"]*)" in the sink$/) do |given_value, given_suit|
+  # Finding the correct Sink
+  sink = Pile.all.find_by(Name: 'Sink')
+
+  # Creating the one given card
+  Card.create!({value: given_value, suit: given_suit, pile: sink})
+end
+
+And(/^I have put "([^"]*)" cards in the sink$/) do |number|
+  # Finding the correct Sink
+  sink = Pile.all.find_by(Name: 'Sink')
+
+  # Adding the 'number' amount of cards to the deck
+  suits = ["Diamonds","Spades","Hearts","Clubs"]
+  values = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
+
+  number = number.to_i
+
+  suits.each do |suit|
+    values.each do |value|
+      unless number.eql? 0
+        Card.create!({value: value, suit: suit, pile: sink})
+        number -= 1
+      end
+    end
+  end
 end
