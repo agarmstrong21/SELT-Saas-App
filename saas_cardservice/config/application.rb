@@ -31,5 +31,6 @@ module SaasCardservice
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.serve_static_files = true
   end
 end

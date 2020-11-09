@@ -69,6 +69,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.fetch(:card, {})
+      params.require(:card).permit(:value, :suit, :pile_id)
     end
 end

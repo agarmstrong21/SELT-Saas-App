@@ -1,8 +1,5 @@
 class Pile < ApplicationRecord
   has_many :cards, dependent: :destroy
-  def create(i)
-    create! unless i.dig(:Name).nil?
-  end
 
   def self.create_deck!
     possibleSuits = ["Diamonds","Spades","Hearts","Clubs"]
