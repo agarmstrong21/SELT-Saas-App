@@ -101,7 +101,7 @@ bower.json
 .byebug_history
 
 # Ignore node_modules
-/node_modules/
+saas_cardservice/node_modules/
 
 saas_cardservice/tmp/
 
