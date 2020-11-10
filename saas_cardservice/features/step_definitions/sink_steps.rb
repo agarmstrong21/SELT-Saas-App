@@ -49,6 +49,7 @@ Then(/^I expect there to be the "([^"]*)" of "([^"]*)"$/) do |given_value, given
       counter += 1 if card.value.eql? given_value
     end
   end
+  expect(counter).to equal(1)
 end
 
 Then(/^I expect there to be "([^"]*)" "([^"]*)"$/) do |number, given_value|
