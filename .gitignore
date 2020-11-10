@@ -38,7 +38,7 @@ build-iPhoneSimulator/
 /rdoc/
 
 ## Environment normalization:
-/.bundle/
+saas_cardservice/.bundle/
 /vendor/bundle
 /lib/bundler/man/
 
@@ -80,7 +80,7 @@ config/master.key
 .env
 
 ## Environment normalization:
-/.bundle
+saas_cardservice/.bundle
 /vendor/bundle
 
 # these should all be checked in to normalize the environment:
