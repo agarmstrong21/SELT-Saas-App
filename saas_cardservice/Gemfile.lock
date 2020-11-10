@@ -140,7 +140,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    high_voltage (3.1.2)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.8.5)
@@ -334,7 +333,6 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   guard-rspec
-  high_voltage (~> 3.1)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   puma (~> 4.1)
