@@ -1,0 +1,132 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/helpers/cards_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/helpers/piles_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/helpers/pilesnew_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/models/card.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/spec/models/pile_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          52,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jasonrathjen/School/SELT/Team6_SELT2020/saas_cardservice/app/models/pile.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          13,
+          52,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1605065248
+  }
+}
