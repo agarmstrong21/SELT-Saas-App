@@ -24,16 +24,11 @@ class PilesController < ApplicationController
   # POST /piles
   # POST /piles.json
   def create
-    @pile = Pile.new(pile_params)
-
-    respond_to do |format|
-      if @pile.save
-        format.html { redirect_to @pile, notice: 'Pile was successfully created.' }
-        format.json { render :show, status: :created, location: @pile }
-      else
-        format.html { render :new }
-        format.json { render json: @pile.errors, status: :unprocessable_entity }
-      end
+    @pile = Pile.find_by Name: pile_params[:Name]
+    if @pile.nil? && pile[:Name] != ''
+      @pile = Pile.create_pile(pile_params)
+    else
+      flash[:warning] = 'The pile name you entered is either empty or taken. Try again.'
     end
   end
 
@@ -68,7 +63,7 @@ class PilesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def pile_params
-      params.fetch(:pile, {})
-    end
+  def pile_params
+    params.require(:pile).permit(:name, :type)
+  end
 end
