@@ -1,5 +1,5 @@
 When(/^I have created a sink$/) do
-  Pile.create_sink!
+  Pile.create_pile({ Name: 'Sink', pile_type: 'sink' })
 end
 
 Then(/^I expect there to be no cards$/) do
@@ -85,7 +85,7 @@ And(/^I have put "([^"]*)" cards in the sink$/) do |number|
   suits.each do |suit|
     values.each do |value|
       unless number.eql? 0
-        Card.create!({value: value, suit: suit, pile: sink})
+        Card.create!({ value: value, suit: suit, pile: sink })
         number -= 1
       end
     end

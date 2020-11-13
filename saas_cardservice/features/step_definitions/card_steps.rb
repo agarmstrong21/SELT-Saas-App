@@ -1,6 +1,6 @@
 When(/^I have created a card with the suit "([^"]*)" and the value "([^"]*)"$/) do |suit, value|
-  deck = Pile.create!({:Name => 'Deck'})
-  Card.create_card!({:suit => suit, :value => value, :pile => deck})
+  sink = Pile.create_pile({ Name: 'Sink', pile_type: 'sink' })
+  Card.create_card!({ suit: suit, value: value, pile: sink })
 end
 
 Then(/^I should have a card entry with the suit "([^"]*)" and value "([^"]*)" in the database$/) do |suit, value|

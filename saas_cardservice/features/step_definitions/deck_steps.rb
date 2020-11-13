@@ -1,5 +1,5 @@
 When(/^I have created a basic deck$/) do
-  Pile.create_deck!
+  Pile.create_pile({ Name: 'Deck', pile_type: 'deck' })
 end
 
 Then(/^I expect there to be 52 Cards total$/) do

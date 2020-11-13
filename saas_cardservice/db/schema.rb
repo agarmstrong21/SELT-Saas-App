@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2020_11_06_222641) do
 
   create_table "piles", force: :cascade do |t|
     t.string "Name", null: false
+    t.string "pile_type", null: false
+    t.boolean "visible", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

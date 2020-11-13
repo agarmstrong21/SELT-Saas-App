@@ -64,6 +64,6 @@ class PilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
   def pile_params
-    params.require(:pile).permit(:name, :type)
+    params.require(:pile).permit(:name, :pile_type)
   end
 end
