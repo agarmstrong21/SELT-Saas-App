@@ -37,11 +37,11 @@ RSpec.describe Pile, type: :model do
     end
     context 'create a hand' do
       it 'should contain no cards' do
-        pile = Pile.create_hand!({Name: 'Hand1', pile_type: 'hand'})
+        pile = Pile.create_pile!({Name: 'Hand1', pile_type: 'hand'})
         expect(pile.cards.length).to equal(0)
       end
       it 'should contain Ace of Spades' do
-        hand = Pile.create_hand!({Name: 'Hand2', pile_type: 'hand'})
+        hand = Pile.create_pile!({Name: 'Hand2', pile_type: 'hand'})
         Card.create!({value: 'Ace', suit: 'Spades', pile: hand})
         counter = 0;
         Pile.where(Name: 'Hand2').each do |pile|
