@@ -1,5 +1,5 @@
 When(/^I have created a sink$/) do
-  Pile.create_pile({ Name: 'Sink', pile_type: 'sink' })
+  Pile.create_pile!({ Name: 'Sink', pile_type: 'sink' })
 end
 
 Then(/^I expect there to be no cards$/) do

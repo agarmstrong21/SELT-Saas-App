@@ -24,12 +24,7 @@ class PilesController < ApplicationController
   # POST /piles
   # POST /piles.json
   def create
-    @pile = Pile.find_by Name: pile_params[:Name]
-    if @pile.nil? && pile[:Name] != ''
-      @pile = Pile.create_pile(pile_params)
-    else
-      flash[:warning] = 'The pile name you entered is either empty or taken. Try again.'
-    end
+    Pile.create_pile! pile_params
   end
 
   # PATCH/PUT /piles/1
@@ -58,9 +53,9 @@ class PilesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_pile
-      @pile = Pile.find(params[:id])
-    end
+  def set_pile
+    @pile = Pile.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
   def pile_params

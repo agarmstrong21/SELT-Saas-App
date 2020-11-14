@@ -1,13 +1,18 @@
 class Pile < ApplicationRecord
   has_many :cards, dependent: :destroy
 
-  def self.create_pile(params)
-    if params[:pile_type] == 'deck'
-      create_deck!(params)
-    elsif params[:pile_type] == 'sink'
-      create_sink!(params)
+  def self.create_pile!(params)
+    @pile = Pile.find_by Name: params[:Name]
+    if @pile.nil? && params[:Name] != ''
+      if params[:pile_type] == 'deck'
+        create_deck!(params)
+      elsif params[:pile_type] == 'sink'
+        create_sink!(params)
+      else
+        flash[:warning] = 'Pile type does not exist created.'
+      end
     else
-      flash[:warning] = 'No pile created.'
+      flash[:warning] = 'The pile name you entered is either empty or taken. Try again.'
     end
   end
 

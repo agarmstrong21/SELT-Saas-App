@@ -1,5 +1,5 @@
 When(/^I have created a card with the suit "([^"]*)" and the value "([^"]*)"$/) do |suit, value|
-  sink = Pile.create_pile({ Name: 'Sink', pile_type: 'sink' })
+  sink = Pile.create_pile!({ Name: 'Sink', pile_type: 'sink' })
   Card.create_card!({ suit: suit, value: value, pile: sink })
 end
 
