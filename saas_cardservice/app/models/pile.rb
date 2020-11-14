@@ -8,6 +8,8 @@ class Pile < ApplicationRecord
         create_deck!(params)
       elsif params[:pile_type] == 'sink'
         create_sink!(params)
+      elsif params[:pile_type] == 'hand'
+        create_hand!(params)
         #else
         #flash[:warning] = 'Pile type does not exist created.'
       end
@@ -33,5 +35,8 @@ class Pile < ApplicationRecord
     Pile.create!({ Name: params[:Name], pile_type: 'sink', visible: false })
   end
 
+  def self.create_hand!(params)
+    Pile.create!({ Name: params[:Name], pile_type: 'hand', visible: false })
+  end
 
 end

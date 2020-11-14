@@ -35,6 +35,25 @@ RSpec.describe Pile, type: :model do
         expect(counter).to equal(1)
       end
     end
+    context 'create a hand' do
+      it 'should contain no cards' do
+        pile = Pile.create_hand!({Name: 'Hand1', pile_type: 'hand'})
+        expect(pile.cards.length).to equal(0)
+      end
+      it 'should contain Ace of Spades' do
+        hand = Pile.create_hand!({Name: 'Hand2', pile_type: 'hand'})
+        Card.create!({value: 'Ace', suit: 'Spades', pile: hand})
+        counter = 0;
+        Pile.where(Name: 'Hand2').each do |pile|
+          pile.cards.each do |card|
+            if card.suit.eql? 'Spades'
+              counter += 1 if card.value.eql? 'Ace'
+            end
+          end
+        end
+        expect(counter).to equal(1)
+      end
+    end
     context 'incorrect pile creation' do
       it 'should not allow you to make two piles named Pile1' do
         Pile.create_pile!({Name: 'Pile1', pile_type: 'deck'})
