@@ -24,17 +24,7 @@ class PilesController < ApplicationController
   # POST /piles
   # POST /piles.json
   def create
-    @pile = Pile.new(pile_params)
-
-    respond_to do |format|
-      if @pile.save
-        format.html { redirect_to @pile, notice: 'Pile was successfully created.' }
-        format.json { render :show, status: :created, location: @pile }
-      else
-        format.html { render :new }
-        format.json { render json: @pile.errors, status: :unprocessable_entity }
-      end
-    end
+    Pile.create_pile! pile_params
   end
 
   # PATCH/PUT /piles/1
@@ -63,12 +53,12 @@ class PilesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_pile
-      @pile = Pile.find(params[:id])
-    end
+  def set_pile
+    @pile = Pile.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def pile_params
-      params.fetch(:pile, {})
-    end
+  def pile_params
+    params.require(:pile).permit(:name, :pile_type)
+  end
 end
