@@ -23,7 +23,7 @@ RSpec.describe Card, type: :model do
       end
       it 'should fail to create a card with no values' do
         sink = Pile.create_pile!({Name: 'Sink4', pile_type: 'sink'})
-        card = Card.create_card!({value: "", suit: "", pile: sink})
+        card = Card.create_card!({value: '', suit: '', pile: sink})
         expect card.nil?
       end
     end

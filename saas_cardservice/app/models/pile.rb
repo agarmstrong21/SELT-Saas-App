@@ -8,11 +8,11 @@ class Pile < ApplicationRecord
         create_deck!(params)
       elsif params[:pile_type] == 'sink'
         create_sink!(params)
-      else
-        flash[:warning] = 'Pile type does not exist created.'
+        #else
+        #flash[:warning] = 'Pile type does not exist created.'
       end
-    else
-      flash[:warning] = 'The pile name you entered is either empty or taken. Try again.'
+      #else
+      #flash[:warning] = 'The pile name you entered is either empty or taken. Try again.'
     end
   end
 

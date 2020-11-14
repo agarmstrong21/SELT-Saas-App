@@ -23,12 +23,12 @@ RSpec.describe Pile, type: :model do
       end
       it 'should contain Ace of Diamonds' do
         sink = Pile.create_pile!({Name: 'Sink2', pile_type: 'sink'})
-        Card.create!({value: "Ace", suit: "Diamonds", pile: sink})
+        Card.create!({value: 'Ace', suit: 'Diamonds', pile: sink})
         counter = 0
         Pile.where(Name: 'Sink2').each do |pile|
           pile.cards.each do |card|
-            if card.suit.eql? "Diamonds"
-              counter += 1 if card.value.eql? "Ace"
+            if card.suit.eql? 'Diamonds'
+              counter += 1 if card.value.eql? 'Ace'
             end
           end
         end
