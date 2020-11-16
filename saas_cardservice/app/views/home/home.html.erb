@@ -1,6 +1,8 @@
 <html>
 
 <body style="background: url(https://cdn11.bigcommerce.com/s-c1tzcg0txe/images/stencil/500x659/products/3652/2091/ozonepark_2460_1400448186__18521.1490639038.jpg?c=2)">
+  <div style="min-height:8vh"></div>
+
   <div class="piles_container">
     <div class="dropdown" style="float: right">
       <button class="dropbtn" >≡</button>
@@ -11,11 +13,25 @@
       </div>
     </div>
     <div class="piles">
-      This is the place where the decks (or draw piles) will be placed.
+      <% decks = Pile.where(pile_type: 'deck') %>
+      <% decks.each do |deck| %>
+
+        <div class="pile" >
+          <div style="padding: 25px"><div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div></div>
+
+
+          <!-- TODO: CHANGE THIS USING IMG TAGS TO CHANGE THE BACKGROUND IMAGE OF THE CLASS PILE WHEN DECK.VISIBLE IS TRUE OR FALSE-->
+          <% if true %>
+               <div style="background: #3e8e41"></div>
+          <% else %>
+                <div style="background: #8a1f11"></div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 
-  <div style="height:8vh"></div>
+  <div style="min-height:8vh"></div>
 
   <div class = piles_container>
     <div class="dropdown" style="float: right">
@@ -27,11 +43,25 @@
       </div>
     </div>
     <div class="piles">
-      This is the place where the sink (or discard piles) will be placed.
+      <% sinks = Pile.where(pile_type: 'sink') %>
+      <% sinks.each do |sink| %>
+
+        <div class="pile" >
+          <div style="padding: 25px"><div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div></div>
+
+
+          <!-- TODO: CHANGE THIS USING IMG TAGS TO CHANGE THE BACKGROUND IMAGE OF THE CLASS PILE WHEN DECK.VISIBLE IS TRUE OR FALSE-->
+          <% if true %>
+            <div style="background: #3e8e41"></div>
+          <% else %>
+            <div style="background: #8a1f11"></div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 
-  <div style="height:8vh"></div>
+  <div style="min-height:8vh"></div>
 
   <div class ="piles_container">
     <div class="piles">

@@ -5,19 +5,32 @@
 /* Divs that hold the Divs of piles */
 
 .piles_container {
-  height:25vh;
+  height:200px;
   width:75vw;
   margin: auto;
 }
 
 .piles {
-  height:80%;
+  padding: 10px;
+  height:200px;
   width:90%;
   background:#c43939;
   margin: auto;
   border-radius: 25px;
   vertical-align: middle;
   text-align: center;
+  overflow: auto;
+}
+
+.pile {
+  display: inline-block;
+  width: 125px;
+  height: 175px;
+  background: url("https://opengameart.org/sites/default/files/card%20back%20red.png") no-repeat;
+  background-size: contain;
+  margin: auto;
+  border-radius: 5px;
+  float: left;
 }
 
 /* Dropdown Button */
