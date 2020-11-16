@@ -1,31 +1,42 @@
 <html>
 
 <body>
-  <div style="height:25vh; width:75vw; background:#c43939; margin: auto;">
-    hi im paul
-    but im not paul
-    but who's paul
-    im paul
-  </div>
-
-  <div style="height:8vh"></div>
-
-  <div style="height:25vh; width:75vw; background:#d2d2d2; margin: auto; ">
-    <div style="height:75%; width:75%; background:#c43939; margin: auto; border-radius: 25px; vertical-align:middle">
-      <p>hi im paul</p>
-      but im not paul
-      but who's paul
-      im paul
+  <div class="piles_container">
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Draw/Move</a>
+        <a href="#">Reshuffle</a>
+        <a href="#">Delete</a>
+      </div>
+    </div>
+    <div class="piles">
+      This is the place where the decks (or draw piles) will be placed.
     </div>
   </div>
 
   <div style="height:8vh"></div>
 
-  <div style="height:25vh; width:75vw; background:#c43939; margin: auto;">
-    hi im paul
-    but im not paul
-    but who's paul
-    im paul
+  <div class = piles_container>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Move</a>
+        <a href="#">Visual</a>
+        <a href="#">Delete</a>
+      </div>
+    </div>
+    <div class="piles">
+      This is the place where the sink (or discard piles) will be placed.
+    </div>
+  </div>
+
+  <div style="height:8vh"></div>
+
+  <div class ="piles_container">
+    <div class="piles">
+      This is the place where the player's hand will be placed.
+    </div>
   </div>
 </body>
 
@@ -35,6 +46,7 @@
 <!-- Citing: https://stackoverflow.com/questions/53394403/html-png-background
              https://www.webucator.com/how-to/how-create-boxes-with-rounded-corners-css.cfm
              https://stackoverflow.com/questions/40690282/is-div-style-width-height-background-css
+             https://www.w3schools.com/howto/howto_css_dropdown.asp
 
 
 
