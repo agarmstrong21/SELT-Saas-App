@@ -15,18 +15,20 @@
     <div class="piles">
       <% decks = Pile.where(pile_type: 'deck') %>
       <% decks.each do |deck| %>
-
-        <div class="pile" >
-          <div style="padding: 25px"><div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div></div>
-
-
-          <!-- TODO: CHANGE THIS USING IMG TAGS TO CHANGE THE BACKGROUND IMAGE OF THE CLASS PILE WHEN DECK.VISIBLE IS TRUE OR FALSE-->
-          <% if true %>
-               <div style="background: #3e8e41"></div>
-          <% else %>
-                <div style="background: #8a1f11"></div>
-          <% end %>
-        </div>
+        <% if deck.visible %>
+          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
+            <div style="padding: 25px">
+              <div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div>
+            </div>
+          </div>
+          <div style="background: #3e8e41"></div>
+        <% else %>
+          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
+            <div style="padding: 25px">
+              <div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -45,18 +47,20 @@
     <div class="piles">
       <% sinks = Pile.where(pile_type: 'sink') %>
       <% sinks.each do |sink| %>
-
-        <div class="pile" >
-          <div style="padding: 25px"><div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div></div>
-
-
-          <!-- TODO: CHANGE THIS USING IMG TAGS TO CHANGE THE BACKGROUND IMAGE OF THE CLASS PILE WHEN DECK.VISIBLE IS TRUE OR FALSE-->
-          <% if true %>
-            <div style="background: #3e8e41"></div>
-          <% else %>
-            <div style="background: #8a1f11"></div>
-          <% end %>
-        </div>
+        <% if sink.visible %>
+          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
+            <div style="padding: 25px">
+              <div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div>
+            </div>
+          </div>
+          <div style="background: #3e8e41"></div>
+        <% else %>
+          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
+            <div style="padding: 25px">
+              <div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

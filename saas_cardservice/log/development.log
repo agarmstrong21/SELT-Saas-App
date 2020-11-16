@@ -2106,3 +2106,346 @@ Migrating to CreatePiles (20201106222641)
   [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-11-16 13:21:07 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:47
+  Rendered home/home.html.erb within layouts/application (Duration: 33.6ms | Allocations: 9289)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 934ms (Views: 918.0ms | ActiveRecord: 2.9ms | Allocations: 74235)
+
+
+Started GET "/" for ::1 at 2020-11-16 15:49:56 -0600
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.7ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:46
+  Rendered home/home.html.erb within layouts/application (Duration: 31.1ms | Allocations: 9240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1019ms (Views: 996.5ms | ActiveRecord: 3.5ms | Allocations: 72140)
+
+
+Started GET "/" for ::1 at 2020-11-16 15:50:56 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (1.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:46
+  Rendered home/home.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1830)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 87.5ms | ActiveRecord: 2.0ms | Allocations: 8570)
+
+
+Started GET "/" for ::1 at 2020-11-16 15:56:33 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:46
+  Rendered home/home.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2750)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 92.7ms | ActiveRecord: 0.9ms | Allocations: 11430)
+
+
+Started GET "/" for ::1 at 2020-11-16 15:56:51 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:46
+  Rendered home/home.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1811)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 83.8ms | ActiveRecord: 0.9ms | Allocations: 8511)
+
+
+Started GET "/" for ::1 at 2020-11-16 15:59:46 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 20.1ms | Allocations: 1847)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 106.8ms | ActiveRecord: 0.8ms | Allocations: 8551)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:00:06 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1839)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 80.5ms | ActiveRecord: 0.9ms | Allocations: 8542)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-16 16:04:02 -0600
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.9ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 33.7ms | Allocations: 8005)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 202ms (Views: 186.1ms | ActiveRecord: 3.3ms | Allocations: 33435)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:05:06 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1808)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 1.2ms | Allocations: 16936)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:06:06 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2645)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 136.0ms | ActiveRecord: 1.0ms | Allocations: 18302)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:07:36 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1829)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 104.0ms | ActiveRecord: 1.1ms | Allocations: 8532)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:07:50 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2442)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 136ms (Views: 120.1ms | ActiveRecord: 0.9ms | Allocations: 18286)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:13:38 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1441)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 553ms (Views: 551.1ms | ActiveRecord: 0.6ms | Allocations: 38716)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:13:54 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (2.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 322ms (Views: 317.6ms | ActiveRecord: 2.7ms | Allocations: 44821)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:16:32 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.7ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 18.4ms | Allocations: 1847)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 149ms (Views: 136.6ms | ActiveRecord: 1.8ms | Allocations: 8545)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:16:33 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (1.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 73.9ms | ActiveRecord: 2.1ms | Allocations: 7185)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:16:35 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (2.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 84.2ms | ActiveRecord: 3.1ms | Allocations: 7958)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:16:48 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.7ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 24.6ms | Allocations: 1843)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 101.0ms | ActiveRecord: 2.0ms | Allocations: 8541)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:16:49 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.9ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 118.9ms | ActiveRecord: 2.4ms | Allocations: 7163)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:16:58 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.8ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 24.7ms | Allocations: 2289)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 115.7ms | ActiveRecord: 2.2ms | Allocations: 15122)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:17:07 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1843)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 125ms (Views: 115.8ms | ActiveRecord: 2.2ms | Allocations: 8542)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:17:09 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.9ms | Allocations: 7161)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:17:16 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:51
+  Rendered home/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 84.0ms | ActiveRecord: 0.6ms | Allocations: 16434)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:18:04 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1827)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 286ms (Views: 281.8ms | ActiveRecord: 0.6ms | Allocations: 27610)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:18:14 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 102ms (Views: 100.0ms | ActiveRecord: 1.1ms | Allocations: 16437)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:18:15 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 98.2ms | ActiveRecord: 1.6ms | Allocations: 14201)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:18:18 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (1.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (1.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 111.4ms | ActiveRecord: 2.3ms | Allocations: 7154)
+
+
+Started GET "/" for ::1 at 2020-11-16 16:18:26 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (3.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (1.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 272ms (Views: 264.9ms | ActiveRecord: 4.7ms | Allocations: 44407)
+
+
