@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Pile.create_pile!({ Name: 'Main Deck', pile_type: 'deck' })
+Pile.create_pile!({ Name: 'Deck2', pile_type: 'deck' })
+Pile.create_pile!({ Name: 'Main Sink', pile_type: 'sink' })
+Pile.create_pile!({Name: 'Sink2', pile_type: 'sink'})
