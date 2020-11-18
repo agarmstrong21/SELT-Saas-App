@@ -4,6 +4,7 @@
   <div style="min-height:8vh"></div>
 
   <div class="piles_container">
+    <h2>Decks</h2>
     <div class="dropdown" style="float: right">
       <button class="dropbtn" >≡</button>
       <div class="dropdown-content">
@@ -18,14 +19,14 @@
         <% if deck.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
             </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
             </div>
           </div>
         <% end %>
@@ -36,6 +37,7 @@
   <div style="min-height:8vh"></div>
 
   <div class = piles_container>
+    <h2>Discard Piles</h2>
     <div class="dropdown" style="float: right">
       <button class="dropbtn">≡</button>
       <div class="dropdown-content">
@@ -50,14 +52,14 @@
         <% if sink.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
           </div>
         <% end %>
@@ -68,6 +70,7 @@
   <div style="min-height:8vh"></div>
 
   <div class ="piles_container">
+    <h2>Player Hand</h2>
     <div class="piles">
       This is the place where the player's hand will be placed.
     </div>
