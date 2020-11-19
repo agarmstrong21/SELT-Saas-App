@@ -2761,3 +2761,17 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 106ms (Views: 91.7ms | ActiveRecord: 1.6ms | Allocations: 28694)
 
 
+Started GET "/" for 127.0.0.1 at 2020-11-18 13:54:09 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:17
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:49
+  Rendered home/home.html.erb within layouts/application (Duration: 22.8ms | Allocations: 8114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 232ms (Views: 217.3ms | ActiveRecord: 1.9ms | Allocations: 33452)
+
+

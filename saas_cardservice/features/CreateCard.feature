@@ -1,3 +1,11 @@
+#####################
+#
+#   Name: CreateCard.feature
+#   Contributors: Kayla Felderman
+#   Description: This is a feature cucumber set to test card creation for different value inputs.
+#
+####################
+
 Feature: Creation of a card
 
 Scenario:  Create the King of Diamonds

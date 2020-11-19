@@ -31,3 +31,14 @@ Then(/^I expect there to be 4 cards with the value "([^"]*)"$/) do |value|
   end
   expect(counter).to equal(4)
 end
+
+And(/^I shuffle the deck$/) do
+  deck = Pile.find_by(Name: 'Deck')
+  deck.shuffle
+end
+
+Then(/^I should see that the deck has changed order$/) do
+  deck = Pile.find_by(Name: 'Deck')
+  #deck.cards.each do |card|
+  #end
+end
