@@ -8,7 +8,6 @@
     <h2>Decks</h2>
     <div class="piles">
       <% decks.each do |deck| %>
-        </div>
         <% if deck.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
@@ -21,6 +20,7 @@
                   <% end %>
                 </div>
             </div>
+          </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
@@ -37,10 +37,11 @@
             </div>
           </div>
         <% end %>
+        </div>
       <% end %>
-    </div>
+      </div>
   </div>
-  </div>
+
 
 
   <div style="min-height:8vh"></div>
