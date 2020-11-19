@@ -6,39 +6,20 @@
   <div class="piles_container">
     <% decks = Pile.where(pile_type: 'deck') %>
     <h2>Decks</h2>
-    <div class="dropdown" style="float: right">
-      <h3>Draw</h3>
-      <button class="dropbtn" >≡</button>
-      <div class="dropdown-content">
-        <% decks.each do |deck| %>
-        <a href="#"><%= "Draw from #{deck.Name}" %></a>
-        <% end %>
-      </div>
-    </div>
-    <div class="dropdown" style="float: right">
-      <h3>Re-Shuffle</h3>
-      <button class="dropbtn" >≡</button>
-      <div class="dropdown-content">
-        <% decks.each do |deck| %>
-        <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
-        <% end %>
-      </div>
-    </div>
-    <div class="dropdown" style="float: right">
-      <h3>Delete</h3>
-      <button class="dropbtn" >≡</button>
-      <div class="dropdown-content">
-        <% decks.each do |deck| %>
-          <a href="#"><%= "Delete #{deck.Name}" %></a>
-        <% end %>
-      </div>
-    </div>
     <div class="piles">
       <% decks.each do |deck| %>
+        </div>
         <% if deck.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+              <div class="dropdown">
+                <button class="dropbtn" >≡</button>
+                <div class="dropdown-content">
+                  <% decks.each do |deck| %>
+                    <a href="#"><%= "Draw from #{deck.Name}" %></a>
+                  <% end %>
+                </div>
             </div>
           </div>
           <div style="background: #3e8e41"></div>
@@ -46,11 +27,19 @@
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+              <div class="dropdown">
+                <button class="dropbtn" >≡</button>
+                <div class="dropdown-content">
+                  <% decks.each do |deck| %>
+                    <a href="#"><%= "Draw from #{deck.Name}" %></a>
+                  <% end %>
+                </div>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
+  </div>
   </div>
 
 

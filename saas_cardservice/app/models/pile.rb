@@ -39,4 +39,9 @@ class Pile < ApplicationRecord
     Pile.create!({ Name: params[:Name], pile_type: 'hand', visible: false })
   end
 
+  def self.move_card!(new_pile_id)
+    card = Pile.first
+    card.update_attribute(:pile_id, new_pile_id)
+  end
+
 end
