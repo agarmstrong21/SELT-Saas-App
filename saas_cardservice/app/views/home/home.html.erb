@@ -1,4 +1,10 @@
 <html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
 <body style="background: url(https://cdn11.bigcommerce.com/s-c1tzcg0txe/images/stencil/500x659/products/3652/2091/ozonepark_2460_1400448186__18521.1490639038.jpg?c=2)">
   <div style="min-height:8vh"></div>
@@ -13,14 +19,29 @@
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
               <div class="dropdown">
-                <button class="dropbtn" >≡</button>
-                <div class="dropdown-content">
-                    <a href="#"><%= "Draw from #{deck.Name}" %></a>
+                <button class="dropbtn" data-toggle="dropdown">≡<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                  <a href="#"><%= "Draw from #{deck.Name}" %><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% piles = Pile.all %>
+                    <% piles.each do |pile| %>
+                    <li>
+                      <a href="#"><%= "#{pile.Name}" %></a>
+                    </li>
+                    <% end %>
+                  </ul>
+                  </li>
+                  <li>
                     <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
+                  </li>
+                  <li>
                     <% if decks.size > 1 %>
                     <a href="#"><%= "Delete #{deck.Name}" %></a>
                     <% end %>
-                </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           </div>
@@ -90,7 +111,6 @@
     </div>
   </div>
 </body>
-
 </html>
 
 
