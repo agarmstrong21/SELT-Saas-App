@@ -15,9 +15,11 @@
               <div class="dropdown">
                 <button class="dropbtn" >≡</button>
                 <div class="dropdown-content">
-                  <% decks.each do |deck| %>
                     <a href="#"><%= "Draw from #{deck.Name}" %></a>
-                  <% end %>
+                    <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
+                    <% if decks.size > 1 %>
+                    <a href="#"><%= "Delete #{deck.Name}" %></a>
+                    <% end %>
                 </div>
             </div>
           </div>
@@ -30,9 +32,11 @@
               <div class="dropdown">
                 <button class="dropbtn" >≡</button>
                 <div class="dropdown-content">
-                  <% decks.each do |deck| %>
                     <a href="#"><%= "Draw from #{deck.Name}" %></a>
-                  <% end %>
+                    <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
+                    <% if decks.size > 1 %>
+                      <a href="#"><%= "Delete #{deck.Name}" %></a>
+                    <% end %>
                 </div>
             </div>
           </div>
