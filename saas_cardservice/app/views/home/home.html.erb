@@ -4,17 +4,36 @@
   <div style="min-height:8vh"></div>
 
   <div class="piles_container">
+    <% decks = Pile.where(pile_type: 'deck') %>
     <h2>Decks</h2>
     <div class="dropdown" style="float: right">
+      <h3>Draw</h3>
       <button class="dropbtn" >≡</button>
       <div class="dropdown-content">
-        <a href="#">Draw/Move</a>
-        <a href="#">Reshuffle</a>
-        <a href="#">Delete</a>
+        <% decks.each do |deck| %>
+        <a href="#"><%= "Draw from #{deck.Name}" %></a>
+        <% end %>
+      </div>
+    </div>
+    <div class="dropdown" style="float: right">
+      <h3>Re-Shuffle</h3>
+      <button class="dropbtn" >≡</button>
+      <div class="dropdown-content">
+        <% decks.each do |deck| %>
+        <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
+        <% end %>
+      </div>
+    </div>
+    <div class="dropdown" style="float: right">
+      <h3>Delete</h3>
+      <button class="dropbtn" >≡</button>
+      <div class="dropdown-content">
+        <% decks.each do |deck| %>
+          <a href="#"><%= "Delete #{deck.Name}" %></a>
+        <% end %>
       </div>
     </div>
     <div class="piles">
-      <% decks = Pile.where(pile_type: 'deck') %>
       <% decks.each do |deck| %>
         <% if deck.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
@@ -33,6 +52,7 @@
       <% end %>
     </div>
   </div>
+
 
   <div style="min-height:8vh"></div>
 
