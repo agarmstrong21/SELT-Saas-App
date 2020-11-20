@@ -1,37 +1,37 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/helpers/application_helper.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/helpers/cards_helper.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/helpers/cards_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/helpers/home_helper.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/helpers/home_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/helpers/piles_helper.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/helpers/piles_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/helpers/pilesnew_helper.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/helpers/pilesnew_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/models/card.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/models/card.rb": {
         "lines": [
           1,
           1,
@@ -51,14 +51,14 @@
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/models/application_record.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/spec/models/pile_spec.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/spec/models/pile_spec.rb": {
         "lines": [
           1,
           1,
@@ -130,10 +130,32 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/add_hand_pile/saas_cardservice/app/models/pile.rb": {
+      "/mnt/c/Users/Dtmcn/Documents/git/SeltProject/rspec_move_card/saas_cardservice/app/models/pile.rb": {
         "lines": [
           1,
           1,
@@ -157,12 +179,12 @@
           null,
           null,
           1,
-          2,
-          2,
-          2,
-          2,
-          26,
-          104,
+          4,
+          4,
+          4,
+          4,
+          52,
+          208,
           null,
           null,
           null,
@@ -173,6 +195,11 @@
           null,
           null,
           1,
+          4,
+          null,
+          null,
+          1,
+          2,
           2,
           null,
           null,
@@ -180,6 +207,6 @@
         ]
       }
     },
-    "timestamp": 1605388640
+    "timestamp": 1605841216
   }
 }
