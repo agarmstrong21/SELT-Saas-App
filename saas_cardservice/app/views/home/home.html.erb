@@ -1,41 +1,90 @@
 <html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
 <body style="background: url(https://cdn11.bigcommerce.com/s-c1tzcg0txe/images/stencil/500x659/products/3652/2091/ozonepark_2460_1400448186__18521.1490639038.jpg?c=2)">
   <div style="min-height:8vh"></div>
 
   <div class="piles_container">
-    <div class="dropdown" style="float: right">
-      <button class="dropbtn" >≡</button>
-      <div class="dropdown-content">
-        <a href="#">Draw/Move</a>
-        <a href="#">Reshuffle</a>
-        <a href="#">Delete</a>
-      </div>
-    </div>
+    <% decks = Pile.where(pile_type: 'deck') %>
+    <h2>Decks</h2>
     <div class="piles">
-      <% decks = Pile.where(pile_type: 'deck') %>
       <% decks.each do |deck| %>
         <% if deck.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+              <div class="dropdown" style="position: static;">
+                <button class="dropbtn" data-toggle="dropdown">≡<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                  <a href="#"><%= "Draw from #{deck.Name}" %><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% piles = Pile.all %>
+                    <% piles.each do |pile| %>
+                    <li>
+                      <a href="#"><%= "#{pile.Name}" %></a>
+                    </li>
+                    <% end %>
+                  </ul>
+                  </li>
+                  <li>
+                    <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
+                  </li>
+                  <li>
+                    <% if decks.size > 1 %>
+                    <a href="#"><%= "Delete #{deck.Name}" %></a>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= deck.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="#">HTML</a></li>
+                  <li><a tabindex="-1" href="#">CSS</a></li>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                      <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                      <li class="dropdown-submenu">
+                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">3rd level dropdown</a></li>
+                          <li><a href="#">3rd level dropdown</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
-    </div>
+      </div>
   </div>
+
+
 
   <div style="min-height:8vh"></div>
 
   <div class = piles_container>
+    <h2>Discard Piles</h2>
     <div class="dropdown" style="float: right">
       <button class="dropbtn">≡</button>
       <div class="dropdown-content">
@@ -50,14 +99,14 @@
         <% if sink.visible %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
           <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #dddcdc; border-radius: 5px"><%= sink.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
           </div>
         <% end %>
@@ -68,12 +117,12 @@
   <div style="min-height:8vh"></div>
 
   <div class ="piles_container">
+    <h2>Player Hand</h2>
     <div class="piles">
       This is the place where the player's hand will be placed.
     </div>
   </div>
 </body>
-
 </html>
 
 
