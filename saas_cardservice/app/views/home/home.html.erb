@@ -51,17 +51,29 @@
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
               <div class="dropdown">
-                <button class="dropbtn" >≡</button>
-                <div class="dropdown-content">
-                    <a href="#"><%= "Draw from #{deck.Name}" %></a>
-                    <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
-                    <% if decks.size > 1 %>
-                      <a href="#"><%= "Delete #{deck.Name}" %></a>
-                    <% end %>
-                </div>
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="#">HTML</a></li>
+                  <li><a tabindex="-1" href="#">CSS</a></li>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                      <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                      <li class="dropdown-submenu">
+                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">3rd level dropdown</a></li>
+                          <li><a href="#">3rd level dropdown</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
         </div>
       <% end %>
       </div>
