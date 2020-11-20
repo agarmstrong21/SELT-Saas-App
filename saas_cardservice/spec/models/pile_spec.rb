@@ -68,4 +68,24 @@ RSpec.describe Pile, type: :model do
       end
     end
   end
+  describe 'moving cards' do
+    context 'create a deck and a hand' do
+      it 'should have 1 card in hand after first draw' do
+        hand = Pile.create_hand!(Name:'Hand1', pile_type:'hand')
+        deck = Pile.create_deck!(Name:'Deck1', pile_type:'deck')
+        #Card.all.first.pile_id
+        puts(Pile.where(Name:'Hand1'))
+        deck.move_card(Pile.where(Name:'Hand1'))
+        handlength = Pile.where(Name: 'Hand1').length
+        expect(handlength).to equal(1)
+      end
+      it 'should have 51 cards in the deck after first draw' do
+        hand = Pile.create_hand!(Name: 'Hand1')
+        deck = Pile.create_deck!(Name: 'Deck1')
+        deck.move_card(deck[:pile_id])
+        decklength = Pile.where(Name: 'Deck1').length
+        expect(decklength).to equal(51)
+      end
+    end
+  end
 end
