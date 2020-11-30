@@ -34,11 +34,25 @@ end
 
 And(/^I shuffle the deck$/) do
   deck = Pile.find_by(Name: 'Deck')
-  deck.shuffle
+  deck.shuffle_pile
 end
 
 Then(/^I should see that the deck has changed order$/) do
   deck = Pile.find_by(Name: 'Deck')
-  #deck.cards.each do |card|
-  #end
+  possible_suits = ['Diamonds','Spades','Hearts','Clubs']
+  possible_values = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
+  spot = 0
+  is_changed = false
+  possible_values.each do |value|
+    possible_suits.each do |suit|
+      card = Card.where(pile: deck).where(position: spot)
+      puts "---------------------------"
+      puts card
+      if !card.nil? && card.value.eql?(value) && card.suit.eql?(suit)
+        is_changed = true
+      end
+      spot += 1
+    end
+  end
+  expect(is_changed).to be_falsey
 end

@@ -44,4 +44,6 @@ class Pile < ApplicationRecord
     card.update!(pile_id: new_pile_id)
   end
 
+  def shuffle_pile
+  end
 end
