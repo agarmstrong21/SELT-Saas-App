@@ -40,28 +40,19 @@ class Pile < ApplicationRecord
   end
 
   def move_card(new_pile_id)
-    card = self.cards.first
+    card = cards.first
     card.update!(pile_id: new_pile_id)
   end
 
   def shuffle_pile
-    list_of_cards = self.cards
-    puts "----------------------------------"
-    p list_of_cards
-    puts "----------------------------------"
+    list_of_cards = cards.to_a
     index = 0
     until list_of_cards.empty?
       current = list_of_cards.delete(list_of_cards.sample)
-      puts 'ppppppppppppppppppp'
-      p current
-      puts current[0].id
-      puts 'ppppppppppppppppppp'
-      card_to_update = Card.find(current[0].id)
-      p card_to_update
+      card_to_update = Card.find(current.id)
       card_to_update.position = index
       card_to_update.save
       index += 1
     end
-    p list_of_cards
   end
 end
