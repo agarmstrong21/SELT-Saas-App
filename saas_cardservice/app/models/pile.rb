@@ -25,7 +25,7 @@ class Pile < ApplicationRecord
     deck = Pile.create!({ Name: params[:Name], pile_type: 'deck', visible: false })
     possible_values.each do |value|
       possible_suits.each do |suit|
-        Card.create!({ value: value, suit: suit, pile: deck })
+        Card.create_card!({ value: value, suit: suit, pile: deck })
       end
     end
   end
@@ -40,8 +40,19 @@ class Pile < ApplicationRecord
   end
 
   def move_card(new_pile_id)
-    card = self.cards.first
+    card = cards.first
     card.update!(pile_id: new_pile_id)
   end
 
+  def shuffle_pile
+    list_of_cards = cards.to_a
+    index = 0
+    until list_of_cards.empty?
+      current = list_of_cards.delete(list_of_cards.sample)
+      card_to_update = Card.find(current.id)
+      card_to_update.position = index
+      card_to_update.save
+      index += 1
+    end
+  end
 end

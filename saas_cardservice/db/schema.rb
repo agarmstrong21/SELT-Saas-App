@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_222641) do
   create_table "cards", force: :cascade do |t|
     t.string "suit"
     t.string "value"
+    t.decimal "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pile_id"

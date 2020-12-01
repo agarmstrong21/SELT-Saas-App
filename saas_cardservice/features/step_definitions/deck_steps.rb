@@ -31,3 +31,24 @@ Then(/^I expect there to be 4 cards with the value "([^"]*)"$/) do |value|
   end
   expect(counter).to equal(4)
 end
+
+And(/^I shuffle the deck$/) do
+  deck = Pile.find_by(Name: 'Deck')
+  deck.shuffle_pile
+end
+
+Then(/^I should see that the deck has changed order$/) do
+  deck = Pile.find_by(Name: 'Deck')
+  possible_suits = ['Diamonds','Spades','Hearts','Clubs']
+  possible_values = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
+  spot = 0
+  is_changed = false
+  possible_values.each do |value|
+    possible_suits.each do |suit|
+      card = Card.where(pile: deck).where(position: spot)
+      is_changed = true unless card.pluck(:value).eql?(value) && card.pluck(:suit).eql?(suit)
+      spot += 1
+    end
+  end
+  expect(is_changed).to be_truthy
+end
