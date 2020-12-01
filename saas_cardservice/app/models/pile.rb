@@ -25,7 +25,7 @@ class Pile < ApplicationRecord
     deck = Pile.create!({ Name: params[:Name], pile_type: 'deck', visible: false })
     possible_values.each do |value|
       possible_suits.each do |suit|
-        Card.create!({ value: value, suit: suit, pile: deck })
+        Card.create_card!({ value: value, suit: suit, pile: deck })
       end
     end
   end
@@ -45,5 +45,23 @@ class Pile < ApplicationRecord
   end
 
   def shuffle_pile
+    list_of_cards = self.cards
+    puts "----------------------------------"
+    p list_of_cards
+    puts "----------------------------------"
+    index = 0
+    until list_of_cards.empty?
+      current = list_of_cards.delete(list_of_cards.sample)
+      puts 'ppppppppppppppppppp'
+      p current
+      puts current[0].id
+      puts 'ppppppppppppppppppp'
+      card_to_update = Card.find(current[0].id)
+      p card_to_update
+      card_to_update.position = index
+      card_to_update.save
+      index += 1
+    end
+    p list_of_cards
   end
 end

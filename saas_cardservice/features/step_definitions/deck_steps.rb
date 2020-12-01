@@ -47,10 +47,8 @@ Then(/^I should see that the deck has changed order$/) do
     possible_suits.each do |suit|
       card = Card.where(pile: deck).where(position: spot)
       puts "---------------------------"
-      puts card
-      if !card.nil? && card.value.eql?(value) && card.suit.eql?(suit)
-        is_changed = true
-      end
+      puts (card.pluck(:value) + card.pluck(:suit))
+      is_changed = true unless card.pluck(:value).eql?(value) && card.pluck(:suit).eql?(suit)
       spot += 1
     end
   end

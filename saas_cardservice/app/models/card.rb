@@ -10,7 +10,7 @@ class Card < ApplicationRecord
     isSuit = true if possibleSuits.include? i[:suit]
     isValue = true if possibleValues.include? i[:value]
     if isValue and isSuit
-      cards = Card.where(pile_id: i[:pile_id])
+      cards = Card.where(pile_id: i[:pile].id)
       i[:position] = cards.length
       Card.create!(i)
     end
