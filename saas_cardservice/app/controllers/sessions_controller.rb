@@ -9,11 +9,11 @@ class SessionsController < ApplicationController
     @user = User.find_by user_id: session_params[:user_id], email: session_params[:email]
     if @user.nil? || session_params[:user_id].nil? || session_params[:email].nil?
       flash[:notice] = "Sorry but that user id/email is invalid"
-      #redirect_to login_path
+      redirect_to login_path
     else
       session[:session_token] = @user.session_token
       flash[:notice] = "Welcome #{User.user_id(session_params)}"
-      #redirect_to movies_path
+      redirect_to home_home_path
     end
   end
 
@@ -23,7 +23,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:session_token] = nil
     flash[:notice] = "Logged Out"
-    #redirect_to movies_path
+    redirect_to login_path
   end
-
 end
