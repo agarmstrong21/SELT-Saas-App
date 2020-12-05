@@ -15,9 +15,9 @@
     <div class="piles">
       <% decks.each do |deck| %>
         <% if deck.visible %>
-          <div class="pile" style="background-image: url(<%= image_url("PNG/4S.png") %>); background-repeat: no-repeat;" >
+          <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%=  deck.cards.first.image %></div>
               <div class="dropdown" style="position: static;">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                   <span class="caret"></span></button>

@@ -16,7 +16,7 @@ class Card < ApplicationRecord
       when 'Ace'
         if i[:suit].equal?('Diamonds')
           i[:image] = "#{i[:value]}D.png"
-        elsif i[:suit].equal('Spades')
+        elsif i[:suit].equal?('Spades')
           i[:image] = 'AS.png'
         elsif i[:suit].equal?('Hearts')
           i[:image] = 'AH.png'
@@ -26,7 +26,7 @@ class Card < ApplicationRecord
       when 'Two'
         if i[:suit].equal?('Diamonds')
           i[:image] = '2D.png'
-        elsif i[:suit].equal('Spades')
+        elsif i[:suit].equal?('Spades')
           i[:image] = '2S.png'
         elsif i[:suit].equal?('Hearts')
           i[:image] = '2H.png'
@@ -36,7 +36,7 @@ class Card < ApplicationRecord
       when 'Three'
         if i[:suit].equal?('Diamonds')
           i[:image] = '3D.png'
-        elsif i[:suit].equal('Spades')
+        elsif i[:suit].equal?('Spades')
           i[:image] = '3S.png'
         elsif i[:suit].equal?('Hearts')
           i[:image] = '3H.png'
@@ -46,7 +46,7 @@ class Card < ApplicationRecord
       when 'Four'
         if i[:suit].equal?('Diamonds')
           i[:image] = '4D.png'
-        elsif i[:suit].equal('Spades')
+        elsif i[:suit].equal?('Spades')
           i[:image] = '4S.png'
         elsif i[:suit].equal?('Hearts')
           i[:image] = '4H.png'
@@ -56,7 +56,7 @@ class Card < ApplicationRecord
       when 'Five'
         if i[:suit].equal?('Diamonds')
           i[:image] = '5D.png'
-        elsif i[:suit].equal('Spades')
+        elsif i[:suit].equal?('Spades')
           i[:image] = '5S.png'
         elsif i[:suit].equal?('Hearts')
           i[:image] = '5H.png'
@@ -66,7 +66,7 @@ class Card < ApplicationRecord
       when 'Six'
         if i[:suit].equal?('Diamonds')
           i[:image] = '6D.png'
-        elsif i[:suit].equal('Spades')
+        elsif i[:suit].equal?('Spades')
           i[:image] = '6S.png'
         elsif i[:suit].equal?('Hearts')
           i[:image] = '6H.png'

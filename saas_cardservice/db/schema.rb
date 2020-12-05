@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_222641) do
     t.string "suit"
     t.string "value"
     t.decimal "position"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pile_id"

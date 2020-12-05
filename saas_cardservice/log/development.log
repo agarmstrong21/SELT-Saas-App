@@ -6236,3 +6236,827 @@ Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.6ms | Allocations: 940
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20201104162715)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "cards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "suit" varchar, "value" varchar, "position" decimal, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "pile_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_cards_on_pile_id" ON "cards" ("pile_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201104162715"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePiles (20201106222641)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "piles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar NOT NULL, "pile_type" varchar NOT NULL, "visible" boolean NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201106222641"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-05 17:17:29.511891"], ["updated_at", "2020-12-05 17:17:29.511891"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mPile Create (0.7ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Main Deck"], ["pile_type", "deck"], ["visible", 0], ["created_at", "2020-12-05 17:17:59.721225"], ["updated_at", "2020-12-05 17:17:59.721225"]]
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Deck2"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mPile Create (0.7ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Deck2"], ["pile_type", "deck"], ["visible", 0], ["created_at", "2020-12-05 17:18:45.882715"], ["updated_at", "2020-12-05 17:18:45.882715"]]
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Ace"], ["position", 0.0], ["created_at", "2020-12-05 17:18:45.905455"], ["updated_at", "2020-12-05 17:18:45.905455"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Ace"], ["position", 1.0], ["created_at", "2020-12-05 17:18:45.909706"], ["updated_at", "2020-12-05 17:18:45.909706"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Ace"], ["position", 2.0], ["created_at", "2020-12-05 17:18:45.913294"], ["updated_at", "2020-12-05 17:18:45.913294"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Ace"], ["position", 3.0], ["created_at", "2020-12-05 17:18:45.917114"], ["updated_at", "2020-12-05 17:18:45.917114"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Two"], ["position", 4.0], ["created_at", "2020-12-05 17:18:45.920773"], ["updated_at", "2020-12-05 17:18:45.920773"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Two"], ["position", 5.0], ["created_at", "2020-12-05 17:18:45.923923"], ["updated_at", "2020-12-05 17:18:45.923923"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Two"], ["position", 6.0], ["created_at", "2020-12-05 17:18:45.926826"], ["updated_at", "2020-12-05 17:18:45.926826"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Two"], ["position", 7.0], ["created_at", "2020-12-05 17:18:45.929647"], ["updated_at", "2020-12-05 17:18:45.929647"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Three"], ["position", 8.0], ["created_at", "2020-12-05 17:18:45.932610"], ["updated_at", "2020-12-05 17:18:45.932610"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Three"], ["position", 9.0], ["created_at", "2020-12-05 17:18:45.935790"], ["updated_at", "2020-12-05 17:18:45.935790"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Three"], ["position", 10.0], ["created_at", "2020-12-05 17:18:45.938929"], ["updated_at", "2020-12-05 17:18:45.938929"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Three"], ["position", 11.0], ["created_at", "2020-12-05 17:18:45.942101"], ["updated_at", "2020-12-05 17:18:45.942101"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Four"], ["position", 12.0], ["created_at", "2020-12-05 17:18:45.945031"], ["updated_at", "2020-12-05 17:18:45.945031"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Four"], ["position", 13.0], ["created_at", "2020-12-05 17:18:45.948178"], ["updated_at", "2020-12-05 17:18:45.948178"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Four"], ["position", 14.0], ["created_at", "2020-12-05 17:18:45.951081"], ["updated_at", "2020-12-05 17:18:45.951081"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Four"], ["position", 15.0], ["created_at", "2020-12-05 17:18:45.954012"], ["updated_at", "2020-12-05 17:18:45.954012"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Five"], ["position", 16.0], ["created_at", "2020-12-05 17:18:45.957168"], ["updated_at", "2020-12-05 17:18:45.957168"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Five"], ["position", 17.0], ["created_at", "2020-12-05 17:18:45.960416"], ["updated_at", "2020-12-05 17:18:45.960416"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Five"], ["position", 18.0], ["created_at", "2020-12-05 17:18:45.963557"], ["updated_at", "2020-12-05 17:18:45.963557"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Five"], ["position", 19.0], ["created_at", "2020-12-05 17:18:45.966633"], ["updated_at", "2020-12-05 17:18:45.966633"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Six"], ["position", 20.0], ["created_at", "2020-12-05 17:18:45.969665"], ["updated_at", "2020-12-05 17:18:45.969665"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Six"], ["position", 21.0], ["created_at", "2020-12-05 17:18:45.973089"], ["updated_at", "2020-12-05 17:18:45.973089"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Six"], ["position", 22.0], ["created_at", "2020-12-05 17:18:45.976155"], ["updated_at", "2020-12-05 17:18:45.976155"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Six"], ["position", 23.0], ["created_at", "2020-12-05 17:18:45.979210"], ["updated_at", "2020-12-05 17:18:45.979210"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Seven"], ["position", 24.0], ["created_at", "2020-12-05 17:18:45.982446"], ["updated_at", "2020-12-05 17:18:45.982446"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Seven"], ["position", 25.0], ["created_at", "2020-12-05 17:18:45.985505"], ["updated_at", "2020-12-05 17:18:45.985505"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Seven"], ["position", 26.0], ["created_at", "2020-12-05 17:18:45.988689"], ["updated_at", "2020-12-05 17:18:45.988689"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Seven"], ["position", 27.0], ["created_at", "2020-12-05 17:18:45.991877"], ["updated_at", "2020-12-05 17:18:45.991877"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Eight"], ["position", 28.0], ["created_at", "2020-12-05 17:18:45.995021"], ["updated_at", "2020-12-05 17:18:45.995021"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Eight"], ["position", 29.0], ["created_at", "2020-12-05 17:18:45.998062"], ["updated_at", "2020-12-05 17:18:45.998062"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Eight"], ["position", 30.0], ["created_at", "2020-12-05 17:18:46.001177"], ["updated_at", "2020-12-05 17:18:46.001177"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Eight"], ["position", 31.0], ["created_at", "2020-12-05 17:18:46.004936"], ["updated_at", "2020-12-05 17:18:46.004936"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Nine"], ["position", 32.0], ["created_at", "2020-12-05 17:18:46.008306"], ["updated_at", "2020-12-05 17:18:46.008306"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Nine"], ["position", 33.0], ["created_at", "2020-12-05 17:18:46.011606"], ["updated_at", "2020-12-05 17:18:46.011606"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Nine"], ["position", 34.0], ["created_at", "2020-12-05 17:18:46.029066"], ["updated_at", "2020-12-05 17:18:46.029066"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Nine"], ["position", 35.0], ["created_at", "2020-12-05 17:18:46.032377"], ["updated_at", "2020-12-05 17:18:46.032377"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Ten"], ["position", 36.0], ["created_at", "2020-12-05 17:18:46.035781"], ["updated_at", "2020-12-05 17:18:46.035781"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Ten"], ["position", 37.0], ["created_at", "2020-12-05 17:18:46.039097"], ["updated_at", "2020-12-05 17:18:46.039097"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Ten"], ["position", 38.0], ["created_at", "2020-12-05 17:18:46.042436"], ["updated_at", "2020-12-05 17:18:46.042436"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Ten"], ["position", 39.0], ["created_at", "2020-12-05 17:18:46.045652"], ["updated_at", "2020-12-05 17:18:46.045652"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Jack"], ["position", 40.0], ["created_at", "2020-12-05 17:18:46.048910"], ["updated_at", "2020-12-05 17:18:46.048910"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Jack"], ["position", 41.0], ["created_at", "2020-12-05 17:18:46.052651"], ["updated_at", "2020-12-05 17:18:46.052651"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Jack"], ["position", 42.0], ["created_at", "2020-12-05 17:18:46.056039"], ["updated_at", "2020-12-05 17:18:46.056039"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Jack"], ["position", 43.0], ["created_at", "2020-12-05 17:18:46.059219"], ["updated_at", "2020-12-05 17:18:46.059219"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "Queen"], ["position", 44.0], ["created_at", "2020-12-05 17:18:46.062970"], ["updated_at", "2020-12-05 17:18:46.062970"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "Queen"], ["position", 45.0], ["created_at", "2020-12-05 17:18:46.066863"], ["updated_at", "2020-12-05 17:18:46.066863"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "Queen"], ["position", 46.0], ["created_at", "2020-12-05 17:18:46.070128"], ["updated_at", "2020-12-05 17:18:46.070128"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "Queen"], ["position", 47.0], ["created_at", "2020-12-05 17:18:46.073400"], ["updated_at", "2020-12-05 17:18:46.073400"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Diamonds"], ["value", "King"], ["position", 48.0], ["created_at", "2020-12-05 17:18:46.076682"], ["updated_at", "2020-12-05 17:18:46.076682"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Spades"], ["value", "King"], ["position", 49.0], ["created_at", "2020-12-05 17:18:46.079840"], ["updated_at", "2020-12-05 17:18:46.079840"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Hearts"], ["value", "King"], ["position", 50.0], ["created_at", "2020-12-05 17:18:46.082845"], ["updated_at", "2020-12-05 17:18:46.082845"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:14:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["suit", "Clubs"], ["value", "King"], ["position", 51.0], ["created_at", "2020-12-05 17:18:46.085993"], ["updated_at", "2020-12-05 17:18:46.085993"], ["pile_id", 2]]
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:77:in `create_card!'
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Sink"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[36mPile Create (0.3ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Main Sink"], ["pile_type", "sink"], ["visible", 0], ["created_at", "2020-12-05 17:18:46.088992"], ["updated_at", "2020-12-05 17:18:46.088992"]]
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Sink2"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[36mPile Create (0.3ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Sink2"], ["pile_type", "sink"], ["visible", 0], ["created_at", "2020-12-05 17:18:46.091806"], ["updated_at", "2020-12-05 17:18:46.091806"]]
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+Started GET "/" for ::1 at 2020-12-05 11:19:56 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 87.5ms | Allocations: 37995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 102.2ms | ActiveRecord: 0.8ms | Allocations: 44523)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:20:08 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  Rendered home/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3473)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3943)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Pile:0x00007fa984421398>):
+    15:     <div class="piles">
+    16:       <% decks.each do |deck| %>
+    17:         <% if deck.visible %>
+    18:           <div class="pile" style="background-image: url(<%= image_url(deck.first.image) %>); background-repeat: no-repeat;" >
+    19:             <div style="padding: 25px">
+    20:               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+    21:               <div class="dropdown" style="position: static;">
+  
+app/views/home/home.html.erb:18
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-05 11:20:57 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:20
+  Rendered home/home.html.erb within layouts/application (Duration: 35.8ms | Allocations: 11977)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.1ms | Allocations: 13171)
+
+
+  
+ActionView::Template::Error (no implicit conversion of nil into String):
+    17:         <% if deck.visible %>
+    18:           <div class="pile" style="background-image: url(<%= image_url("PNG/4S.png") %>); background-repeat: no-repeat;" >
+    19:             <div style="padding: 25px">
+    20:               <div style="background: #000000; border-radius: 5px"><%= deck.Name + deck.cards.first%></div>
+    21:               <div class="dropdown" style="position: static;">
+    22:                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    23:                   <span class="caret"></span></button>
+  
+app/views/home/home.html.erb:20:in `+'
+app/views/home/home.html.erb:20
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-05 11:21:11 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 8.4ms | Allocations: 5074)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.6ms | Allocations: 10327)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:21:25 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  Rendered home/home.html.erb within layouts/application (Duration: 6.2ms | Allocations: 4534)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms | Allocations: 5721)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Pile:0x00007fa98d86f270>):
+    17:         <% if deck.visible %>
+    18:           <div class="pile" style="background-image: url(<%= image_url("PNG/4S.png") %>); background-repeat: no-repeat;" >
+    19:             <div style="padding: 25px">
+    20:               <div style="background: #000000; border-radius: 5px"><%=  deck.first.Name%></div>
+    21:               <div class="dropdown" style="position: static;">
+    22:                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    23:                   <span class="caret"></span></button>
+  
+app/views/home/home.html.erb:20
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-05 11:21:32 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4162)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 9407)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:22:31 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3500)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 7827)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:22:33 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 11]]
+  Rendered home/home.html.erb within layouts/application (Duration: 6.2ms | Allocations: 6041)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 7224)
+
+
+  
+ActionView::Template::Error (undefined method `suit' for #<ActiveRecord::Associations::CollectionProxy []>):
+    17:         <% if deck.visible %>
+    18:           <div class="pile" style="background-image: url(<%= image_url("PNG/4S.png") %>); background-repeat: no-repeat;" >
+    19:             <div style="padding: 25px">
+    20:               <div style="background: #000000; border-radius: 5px"><%=  deck.cards.suit%></div>
+    21:               <div class="dropdown" style="position: static;">
+    22:                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    23:                   <span class="caret"></span></button>
+  
+app/views/home/home.html.erb:20
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-05 11:22:54 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4192)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 9432)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:23:09 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5023)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.5ms | Allocations: 10263)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:23:57 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 6.3ms | Allocations: 5549)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.6ms | Allocations: 9871)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:24:08 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4321)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 8644)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:24:26 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 4321)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 8646)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:24:28 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4319)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.5ms | Allocations: 8647)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:24:36 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 8677)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:24:40 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 32.0ms | Allocations: 13492)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.5ms | Allocations: 18639)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:25:18 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 6.5ms | Allocations: 5058)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 10292)
+
+
+Started GET "/" for ::1 at 2020-12-05 11:25:28 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  Rendered home/home.html.erb within layouts/application (Duration: 10.3ms | Allocations: 8218)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms | Allocations: 9408)
+
+
+  
+ActionView::Template::Error (The asset "AD.png" is not present in the asset pipeline.
+):
+    15:     <div class="piles">
+    16:       <% decks.each do |deck| %>
+    17:         <% if deck.visible %>
+    18:           <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;" >
+    19:             <div style="padding: 25px">
+    20:               <div style="background: #000000; border-radius: 5px"><%=  deck.cards.first.image %></div>
+    21:               <div class="dropdown" style="position: static;">
+  
+app/views/home/home.html.erb:18
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-05 11:25:50 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:20
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 137.0ms | Allocations: 54626)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 147.1ms | ActiveRecord: 0.5ms | Allocations: 59028)
+
+
