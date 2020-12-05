@@ -15,7 +15,7 @@
     <div class="piles">
       <% decks.each do |deck| %>
         <% if deck.visible %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
+          <div class="pile" style="background-image: url(<%= image_url("4S.png") %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
               <div class="dropdown" style="position: static;">
