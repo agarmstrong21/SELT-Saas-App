@@ -7060,3 +7060,42 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 148ms (Views: 147.1ms | ActiveRecord: 0.5ms | Allocations: 59028)
 
 
+Started GET "/" for ::1 at 2020-12-05 22:33:39 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.8ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  Rendered home/home.html.erb within layouts/application (Duration: 19.9ms | Allocations: 2824)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.8ms | Allocations: 4017)
+
+
+  
+ActionView::Template::Error (The asset "PNG/red_back.png" is not present in the asset pipeline.
+):
+    49:           </div>
+    50:           <div style="background: #3e8e41"></div>
+    51:         <% else %>
+    52:           <div class="pile" style="background-image: url(<%= image_url("PNG/red_back.png") %>); background-repeat: no-repeat;" >
+    53:             <div style="padding: 25px">
+    54:               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+    55:               <div class="dropdown">
+  
+app/views/home/home.html.erb:52
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-05 22:34:51 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 534.6ms | Allocations: 92582)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 570ms (Views: 563.5ms | ActiveRecord: 3.0ms | Allocations: 98051)
+
+
