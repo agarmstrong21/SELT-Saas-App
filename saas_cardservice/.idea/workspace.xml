@@ -50,6 +50,9 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/images" />
     </key>
@@ -285,7 +288,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604507107277</updated>
       <workItem from="1604507108475" duration="18026000" />
-      <workItem from="1607185451213" duration="3007000" />
+      <workItem from="1607185451213" duration="3379000" />
     </task>
     <task id="LOCAL-00001" summary="Added the Test Cases for Sink. Covers basic expectations.">
       <created>1604863006261</created>
