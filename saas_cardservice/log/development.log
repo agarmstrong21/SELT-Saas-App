@@ -7060,3 +7060,989 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 148ms (Views: 147.1ms | ActiveRecord: 0.5ms | Allocations: 59028)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20201104162715)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "cards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "suit" varchar, "value" varchar, "position" decimal, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "pile_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_cards_on_pile_id" ON "cards" ("pile_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201104162715"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePiles (20201106222641)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "piles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar NOT NULL, "pile_type" varchar NOT NULL, "visible" boolean NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201106222641"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-07 23:30:18.505610"], ["updated_at", "2020-12-07 23:30:18.505610"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mPile Create (0.3ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Main Deck"], ["pile_type", "deck"], ["visible", 0], ["created_at", "2020-12-07 23:30:27.480287"], ["updated_at", "2020-12-07 23:30:27.480287"]]
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "A"], ["position", 0.0], ["image", "AD.png"], ["created_at", "2020-12-07 23:30:27.498796"], ["updated_at", "2020-12-07 23:30:27.498796"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "A"], ["position", 1.0], ["image", "AS.png"], ["created_at", "2020-12-07 23:30:27.503328"], ["updated_at", "2020-12-07 23:30:27.503328"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "A"], ["position", 2.0], ["image", "AH.png"], ["created_at", "2020-12-07 23:30:27.507222"], ["updated_at", "2020-12-07 23:30:27.507222"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "A"], ["position", 3.0], ["image", "AC.png"], ["created_at", "2020-12-07 23:30:27.510583"], ["updated_at", "2020-12-07 23:30:27.510583"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "2"], ["position", 4.0], ["image", "2D.png"], ["created_at", "2020-12-07 23:30:27.514048"], ["updated_at", "2020-12-07 23:30:27.514048"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "2"], ["position", 5.0], ["image", "2S.png"], ["created_at", "2020-12-07 23:30:27.517200"], ["updated_at", "2020-12-07 23:30:27.517200"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "2"], ["position", 6.0], ["image", "2H.png"], ["created_at", "2020-12-07 23:30:27.520708"], ["updated_at", "2020-12-07 23:30:27.520708"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "2"], ["position", 7.0], ["image", "2C.png"], ["created_at", "2020-12-07 23:30:27.524203"], ["updated_at", "2020-12-07 23:30:27.524203"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "3"], ["position", 8.0], ["image", "3D.png"], ["created_at", "2020-12-07 23:30:27.527518"], ["updated_at", "2020-12-07 23:30:27.527518"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "3"], ["position", 9.0], ["image", "3S.png"], ["created_at", "2020-12-07 23:30:27.530833"], ["updated_at", "2020-12-07 23:30:27.530833"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "3"], ["position", 10.0], ["image", "3H.png"], ["created_at", "2020-12-07 23:30:27.533678"], ["updated_at", "2020-12-07 23:30:27.533678"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "3"], ["position", 11.0], ["image", "3C.png"], ["created_at", "2020-12-07 23:30:27.536555"], ["updated_at", "2020-12-07 23:30:27.536555"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "4"], ["position", 12.0], ["image", "4D.png"], ["created_at", "2020-12-07 23:30:27.539474"], ["updated_at", "2020-12-07 23:30:27.539474"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "4"], ["position", 13.0], ["image", "4S.png"], ["created_at", "2020-12-07 23:30:27.542193"], ["updated_at", "2020-12-07 23:30:27.542193"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "4"], ["position", 14.0], ["image", "4H.png"], ["created_at", "2020-12-07 23:30:27.544931"], ["updated_at", "2020-12-07 23:30:27.544931"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "4"], ["position", 15.0], ["image", "4C.png"], ["created_at", "2020-12-07 23:30:27.547848"], ["updated_at", "2020-12-07 23:30:27.547848"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "5"], ["position", 16.0], ["image", "5D.png"], ["created_at", "2020-12-07 23:30:27.550566"], ["updated_at", "2020-12-07 23:30:27.550566"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "5"], ["position", 17.0], ["image", "5S.png"], ["created_at", "2020-12-07 23:30:27.553275"], ["updated_at", "2020-12-07 23:30:27.553275"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "5"], ["position", 18.0], ["image", "5H.png"], ["created_at", "2020-12-07 23:30:27.555974"], ["updated_at", "2020-12-07 23:30:27.555974"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "5"], ["position", 19.0], ["image", "5C.png"], ["created_at", "2020-12-07 23:30:27.558758"], ["updated_at", "2020-12-07 23:30:27.558758"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "6"], ["position", 20.0], ["image", "6D.png"], ["created_at", "2020-12-07 23:30:27.561462"], ["updated_at", "2020-12-07 23:30:27.561462"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "6"], ["position", 21.0], ["image", "6S.png"], ["created_at", "2020-12-07 23:30:27.564173"], ["updated_at", "2020-12-07 23:30:27.564173"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "6"], ["position", 22.0], ["image", "6H.png"], ["created_at", "2020-12-07 23:30:27.567022"], ["updated_at", "2020-12-07 23:30:27.567022"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "6"], ["position", 23.0], ["image", "6C.png"], ["created_at", "2020-12-07 23:30:27.570011"], ["updated_at", "2020-12-07 23:30:27.570011"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "7"], ["position", 24.0], ["image", "7D.png"], ["created_at", "2020-12-07 23:30:27.573218"], ["updated_at", "2020-12-07 23:30:27.573218"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "7"], ["position", 25.0], ["image", "7S.png"], ["created_at", "2020-12-07 23:30:27.576495"], ["updated_at", "2020-12-07 23:30:27.576495"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "7"], ["position", 26.0], ["image", "7H.png"], ["created_at", "2020-12-07 23:30:27.581451"], ["updated_at", "2020-12-07 23:30:27.581451"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "7"], ["position", 27.0], ["image", "7C.png"], ["created_at", "2020-12-07 23:30:27.585674"], ["updated_at", "2020-12-07 23:30:27.585674"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "8"], ["position", 28.0], ["image", "8D.png"], ["created_at", "2020-12-07 23:30:27.589385"], ["updated_at", "2020-12-07 23:30:27.589385"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "8"], ["position", 29.0], ["image", "8S.png"], ["created_at", "2020-12-07 23:30:27.593543"], ["updated_at", "2020-12-07 23:30:27.593543"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "8"], ["position", 30.0], ["image", "8H.png"], ["created_at", "2020-12-07 23:30:27.596209"], ["updated_at", "2020-12-07 23:30:27.596209"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "8"], ["position", 31.0], ["image", "8C.png"], ["created_at", "2020-12-07 23:30:27.599218"], ["updated_at", "2020-12-07 23:30:27.599218"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "9"], ["position", 32.0], ["image", "9D.png"], ["created_at", "2020-12-07 23:30:27.602521"], ["updated_at", "2020-12-07 23:30:27.602521"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "9"], ["position", 33.0], ["image", "9S.png"], ["created_at", "2020-12-07 23:30:27.605995"], ["updated_at", "2020-12-07 23:30:27.605995"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "9"], ["position", 34.0], ["image", "9H.png"], ["created_at", "2020-12-07 23:30:27.609460"], ["updated_at", "2020-12-07 23:30:27.609460"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "9"], ["position", 35.0], ["image", "9C.png"], ["created_at", "2020-12-07 23:30:27.613050"], ["updated_at", "2020-12-07 23:30:27.613050"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "10"], ["position", 36.0], ["image", "10D.png"], ["created_at", "2020-12-07 23:30:27.616741"], ["updated_at", "2020-12-07 23:30:27.616741"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "10"], ["position", 37.0], ["image", "10S.png"], ["created_at", "2020-12-07 23:30:27.620641"], ["updated_at", "2020-12-07 23:30:27.620641"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "10"], ["position", 38.0], ["image", "10H.png"], ["created_at", "2020-12-07 23:30:27.624136"], ["updated_at", "2020-12-07 23:30:27.624136"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "10"], ["position", 39.0], ["image", "10C.png"], ["created_at", "2020-12-07 23:30:27.627417"], ["updated_at", "2020-12-07 23:30:27.627417"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "J"], ["position", 40.0], ["image", "JD.png"], ["created_at", "2020-12-07 23:30:27.630678"], ["updated_at", "2020-12-07 23:30:27.630678"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "J"], ["position", 41.0], ["image", "JS.png"], ["created_at", "2020-12-07 23:30:27.633951"], ["updated_at", "2020-12-07 23:30:27.633951"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "J"], ["position", 42.0], ["image", "JH.png"], ["created_at", "2020-12-07 23:30:27.637317"], ["updated_at", "2020-12-07 23:30:27.637317"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "J"], ["position", 43.0], ["image", "JC.png"], ["created_at", "2020-12-07 23:30:27.640764"], ["updated_at", "2020-12-07 23:30:27.640764"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "Q"], ["position", 44.0], ["image", "QD.png"], ["created_at", "2020-12-07 23:30:27.644336"], ["updated_at", "2020-12-07 23:30:27.644336"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "Q"], ["position", 45.0], ["image", "QS.png"], ["created_at", "2020-12-07 23:30:27.647947"], ["updated_at", "2020-12-07 23:30:27.647947"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "Q"], ["position", 46.0], ["image", "QH.png"], ["created_at", "2020-12-07 23:30:27.651717"], ["updated_at", "2020-12-07 23:30:27.651717"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "Q"], ["position", 47.0], ["image", "QC.png"], ["created_at", "2020-12-07 23:30:27.655358"], ["updated_at", "2020-12-07 23:30:27.655358"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "K"], ["position", 48.0], ["image", "KD.png"], ["created_at", "2020-12-07 23:30:27.658978"], ["updated_at", "2020-12-07 23:30:27.658978"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "K"], ["position", 49.0], ["image", "KS.png"], ["created_at", "2020-12-07 23:30:27.679613"], ["updated_at", "2020-12-07 23:30:27.679613"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "K"], ["position", 50.0], ["image", "KH.png"], ["created_at", "2020-12-07 23:30:27.683503"], ["updated_at", "2020-12-07 23:30:27.683503"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "K"], ["position", 51.0], ["image", "KC.png"], ["created_at", "2020-12-07 23:30:27.687139"], ["updated_at", "2020-12-07 23:30:27.687139"], ["pile_id", 1]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Deck2"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mPile Create (0.3ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Deck2"], ["pile_type", "deck"], ["visible", 0], ["created_at", "2020-12-07 23:30:27.690248"], ["updated_at", "2020-12-07 23:30:27.690248"]]
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:25:in `create_deck!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "A"], ["position", 0.0], ["image", "AD.png"], ["created_at", "2020-12-07 23:30:27.693400"], ["updated_at", "2020-12-07 23:30:27.693400"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "A"], ["position", 1.0], ["image", "AS.png"], ["created_at", "2020-12-07 23:30:27.696936"], ["updated_at", "2020-12-07 23:30:27.696936"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "A"], ["position", 2.0], ["image", "AH.png"], ["created_at", "2020-12-07 23:30:27.700182"], ["updated_at", "2020-12-07 23:30:27.700182"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "A"], ["position", 3.0], ["image", "AC.png"], ["created_at", "2020-12-07 23:30:27.703410"], ["updated_at", "2020-12-07 23:30:27.703410"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "2"], ["position", 4.0], ["image", "2D.png"], ["created_at", "2020-12-07 23:30:27.706812"], ["updated_at", "2020-12-07 23:30:27.706812"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "2"], ["position", 5.0], ["image", "2S.png"], ["created_at", "2020-12-07 23:30:27.710173"], ["updated_at", "2020-12-07 23:30:27.710173"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "2"], ["position", 6.0], ["image", "2H.png"], ["created_at", "2020-12-07 23:30:27.713455"], ["updated_at", "2020-12-07 23:30:27.713455"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "2"], ["position", 7.0], ["image", "2C.png"], ["created_at", "2020-12-07 23:30:27.716795"], ["updated_at", "2020-12-07 23:30:27.716795"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "3"], ["position", 8.0], ["image", "3D.png"], ["created_at", "2020-12-07 23:30:27.720144"], ["updated_at", "2020-12-07 23:30:27.720144"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "3"], ["position", 9.0], ["image", "3S.png"], ["created_at", "2020-12-07 23:30:27.723291"], ["updated_at", "2020-12-07 23:30:27.723291"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "3"], ["position", 10.0], ["image", "3H.png"], ["created_at", "2020-12-07 23:30:27.726276"], ["updated_at", "2020-12-07 23:30:27.726276"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "3"], ["position", 11.0], ["image", "3C.png"], ["created_at", "2020-12-07 23:30:27.729209"], ["updated_at", "2020-12-07 23:30:27.729209"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "4"], ["position", 12.0], ["image", "4D.png"], ["created_at", "2020-12-07 23:30:27.732322"], ["updated_at", "2020-12-07 23:30:27.732322"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "4"], ["position", 13.0], ["image", "4S.png"], ["created_at", "2020-12-07 23:30:27.735515"], ["updated_at", "2020-12-07 23:30:27.735515"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "4"], ["position", 14.0], ["image", "4H.png"], ["created_at", "2020-12-07 23:30:27.738650"], ["updated_at", "2020-12-07 23:30:27.738650"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "4"], ["position", 15.0], ["image", "4C.png"], ["created_at", "2020-12-07 23:30:27.741866"], ["updated_at", "2020-12-07 23:30:27.741866"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "5"], ["position", 16.0], ["image", "5D.png"], ["created_at", "2020-12-07 23:30:27.744926"], ["updated_at", "2020-12-07 23:30:27.744926"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "5"], ["position", 17.0], ["image", "5S.png"], ["created_at", "2020-12-07 23:30:27.748084"], ["updated_at", "2020-12-07 23:30:27.748084"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "5"], ["position", 18.0], ["image", "5H.png"], ["created_at", "2020-12-07 23:30:27.751354"], ["updated_at", "2020-12-07 23:30:27.751354"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "5"], ["position", 19.0], ["image", "5C.png"], ["created_at", "2020-12-07 23:30:27.754470"], ["updated_at", "2020-12-07 23:30:27.754470"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "6"], ["position", 20.0], ["image", "6D.png"], ["created_at", "2020-12-07 23:30:27.757690"], ["updated_at", "2020-12-07 23:30:27.757690"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "6"], ["position", 21.0], ["image", "6S.png"], ["created_at", "2020-12-07 23:30:27.760840"], ["updated_at", "2020-12-07 23:30:27.760840"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "6"], ["position", 22.0], ["image", "6H.png"], ["created_at", "2020-12-07 23:30:27.764116"], ["updated_at", "2020-12-07 23:30:27.764116"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "6"], ["position", 23.0], ["image", "6C.png"], ["created_at", "2020-12-07 23:30:27.767281"], ["updated_at", "2020-12-07 23:30:27.767281"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "7"], ["position", 24.0], ["image", "7D.png"], ["created_at", "2020-12-07 23:30:27.770336"], ["updated_at", "2020-12-07 23:30:27.770336"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "7"], ["position", 25.0], ["image", "7S.png"], ["created_at", "2020-12-07 23:30:27.773544"], ["updated_at", "2020-12-07 23:30:27.773544"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "7"], ["position", 26.0], ["image", "7H.png"], ["created_at", "2020-12-07 23:30:27.776842"], ["updated_at", "2020-12-07 23:30:27.776842"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "7"], ["position", 27.0], ["image", "7C.png"], ["created_at", "2020-12-07 23:30:27.779961"], ["updated_at", "2020-12-07 23:30:27.779961"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "8"], ["position", 28.0], ["image", "8D.png"], ["created_at", "2020-12-07 23:30:27.782861"], ["updated_at", "2020-12-07 23:30:27.782861"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "8"], ["position", 29.0], ["image", "8S.png"], ["created_at", "2020-12-07 23:30:27.785609"], ["updated_at", "2020-12-07 23:30:27.785609"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "8"], ["position", 30.0], ["image", "8H.png"], ["created_at", "2020-12-07 23:30:27.788368"], ["updated_at", "2020-12-07 23:30:27.788368"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "8"], ["position", 31.0], ["image", "8C.png"], ["created_at", "2020-12-07 23:30:27.791110"], ["updated_at", "2020-12-07 23:30:27.791110"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "9"], ["position", 32.0], ["image", "9D.png"], ["created_at", "2020-12-07 23:30:27.794686"], ["updated_at", "2020-12-07 23:30:27.794686"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "9"], ["position", 33.0], ["image", "9S.png"], ["created_at", "2020-12-07 23:30:27.797560"], ["updated_at", "2020-12-07 23:30:27.797560"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "9"], ["position", 34.0], ["image", "9H.png"], ["created_at", "2020-12-07 23:30:27.800317"], ["updated_at", "2020-12-07 23:30:27.800317"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "9"], ["position", 35.0], ["image", "9C.png"], ["created_at", "2020-12-07 23:30:27.803191"], ["updated_at", "2020-12-07 23:30:27.803191"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "10"], ["position", 36.0], ["image", "10D.png"], ["created_at", "2020-12-07 23:30:27.806068"], ["updated_at", "2020-12-07 23:30:27.806068"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "10"], ["position", 37.0], ["image", "10S.png"], ["created_at", "2020-12-07 23:30:27.809074"], ["updated_at", "2020-12-07 23:30:27.809074"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "10"], ["position", 38.0], ["image", "10H.png"], ["created_at", "2020-12-07 23:30:27.811850"], ["updated_at", "2020-12-07 23:30:27.811850"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "10"], ["position", 39.0], ["image", "10C.png"], ["created_at", "2020-12-07 23:30:27.814671"], ["updated_at", "2020-12-07 23:30:27.814671"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "J"], ["position", 40.0], ["image", "JD.png"], ["created_at", "2020-12-07 23:30:27.817399"], ["updated_at", "2020-12-07 23:30:27.817399"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "J"], ["position", 41.0], ["image", "JS.png"], ["created_at", "2020-12-07 23:30:27.820357"], ["updated_at", "2020-12-07 23:30:27.820357"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "J"], ["position", 42.0], ["image", "JH.png"], ["created_at", "2020-12-07 23:30:27.823230"], ["updated_at", "2020-12-07 23:30:27.823230"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "J"], ["position", 43.0], ["image", "JC.png"], ["created_at", "2020-12-07 23:30:27.826052"], ["updated_at", "2020-12-07 23:30:27.826052"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "Q"], ["position", 44.0], ["image", "QD.png"], ["created_at", "2020-12-07 23:30:27.829159"], ["updated_at", "2020-12-07 23:30:27.829159"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "Q"], ["position", 45.0], ["image", "QS.png"], ["created_at", "2020-12-07 23:30:27.832171"], ["updated_at", "2020-12-07 23:30:27.832171"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "Q"], ["position", 46.0], ["image", "QH.png"], ["created_at", "2020-12-07 23:30:27.835132"], ["updated_at", "2020-12-07 23:30:27.835132"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "Q"], ["position", 47.0], ["image", "QC.png"], ["created_at", "2020-12-07 23:30:27.837890"], ["updated_at", "2020-12-07 23:30:27.837890"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "D"], ["value", "K"], ["position", 48.0], ["image", "KD.png"], ["created_at", "2020-12-07 23:30:27.840938"], ["updated_at", "2020-12-07 23:30:27.840938"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "S"], ["value", "K"], ["position", 49.0], ["image", "KS.png"], ["created_at", "2020-12-07 23:30:27.844014"], ["updated_at", "2020-12-07 23:30:27.844014"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "H"], ["value", "K"], ["position", 50.0], ["image", "KH.png"], ["created_at", "2020-12-07 23:30:27.846971"], ["updated_at", "2020-12-07 23:30:27.846971"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/card.rb:15:in `create_card!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("suit", "value", "position", "image", "created_at", "updated_at", "pile_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["suit", "C"], ["value", "K"], ["position", 51.0], ["image", "KC.png"], ["created_at", "2020-12-07 23:30:27.849784"], ["updated_at", "2020-12-07 23:30:27.849784"], ["pile_id", 2]]
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/card.rb:17:in `create_card!'
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Sink"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[36mPile Create (0.3ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Main Sink"], ["pile_type", "sink"], ["visible", 0], ["created_at", "2020-12-07 23:30:27.852735"], ["updated_at", "2020-12-07 23:30:27.852735"]]
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Sink2"], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:5:in `create_pile!'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[36mPile Create (0.3ms)[0m  [1m[32mINSERT INTO "piles" ("Name", "pile_type", "visible", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Name", "Sink2"], ["pile_type", "sink"], ["visible", 0], ["created_at", "2020-12-07 23:30:27.855729"], ["updated_at", "2020-12-07 23:30:27.855729"]]
+  ↳ app/models/pile.rb:35:in `create_sink!'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:35:in `create_sink!'
+Started GET "/" for ::1 at 2020-12-07 17:31:38 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  Rendered home/home.html.erb within layouts/application (Duration: 15.2ms | Allocations: 11740)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms | Allocations: 14233)
+
+
+  
+ActionView::Template::Error (The asset "PNG/red_back.png" is not present in the asset pipeline.
+):
+    49:           </div>
+    50:           <div style="background: #3e8e41"></div>
+    51:         <% else %>
+    52:           <div class="pile" style="background-image: url(<%= image_url("PNG/red_back.png") %>); background-repeat: no-repeat;" >
+    53:             <div style="padding: 25px">
+    54:               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+    55:               <div class="dropdown">
+  
+app/views/home/home.html.erb:52
+app/views/home/home.html.erb:16
+Started GET "/" for ::1 at 2020-12-07 17:32:41 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 261.3ms | Allocations: 84095)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 276ms (Views: 274.4ms | ActiveRecord: 0.4ms | Allocations: 89622)
+
+
+Started GET "/" for ::1 at 2020-12-07 17:32:58 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 34.3ms | Allocations: 15745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 1.5ms | Allocations: 20080)
+
+
+Started GET "/" for ::1 at 2020-12-07 17:33:09 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 7.3ms | Allocations: 5599)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.6ms | Allocations: 10012)
+
+
+Started GET "/" for ::1 at 2020-12-07 17:33:26 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:16
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:18
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:100
+  Rendered home/home.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4303)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.6ms | Allocations: 8726)
+
+
