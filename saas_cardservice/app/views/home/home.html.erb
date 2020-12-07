@@ -14,7 +14,7 @@
     <h2>Decks</h2>
     <div class="piles">
       <% decks.each do |deck| %>
-        <% if deck.visible %>
+        <% if deck.visible && !deck.cards.first.nil?%>
           <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%=  deck.Name %></div>
@@ -98,15 +98,15 @@
     <div class="piles">
       <% sinks = Pile.where(pile_type: 'sink') %>
       <% sinks.each do |sink| %>
-        <% if sink.visible %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
+        <% if sink.visible && !sink.cards.first.nil?%>
+          <div class="pile" style="background-image: url(<%= image_url(sink.cards.first.image) %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
+          <div class="pile" style="background-image: url(<%= image_url("red_back.png") %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
