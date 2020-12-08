@@ -4,70 +4,70 @@ Feature: Creation of Deck of 52 cards
     When I have created a basic deck
     Then I expect there to be 52 Cards total
 
-  Scenario: I want there to be 13 cards in the Hearts Suit
+  Scenario: I want there to be 13 cards in the H Suit
     When I have created a basic deck
-    Then I expect there to be 13 cards with the "Hearts" suit
+    Then I expect there to be 13 cards with the "H" suit
 
-  Scenario: I want there to be 13 cards in the Diamonds Suit
+  Scenario: I want there to be 13 cards in the D Suit
     When I have created a basic deck
-    Then I expect there to be 13 cards with the "Diamonds" suit
+    Then I expect there to be 13 cards with the "D" suit
 
-  Scenario: I want there to be 13 cards in the Spades Suit
+  Scenario: I want there to be 13 cards in the S Suit
     When I have created a basic deck
-    Then I expect there to be 13 cards with the "Spades" suit
+    Then I expect there to be 13 cards with the "S" suit
 
-  Scenario: I want there to be 13 cards in the Clubs Suit
+  Scenario: I want there to be 13 cards in the C Suit
     When I have created a basic deck
-    Then I expect there to be 13 cards with the "Clubs" suit
+    Then I expect there to be 13 cards with the "C" suit
 
-  Scenario: I want there to be 4 cards with the face value Ace
+  Scenario: I want there to be 4 cards with the face value A
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Ace"
+    Then I expect there to be 4 cards with the value "A"
 
-  Scenario: I want there to be 4 cards with the face value Two
+  Scenario: I want there to be 4 cards with the face value 2
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Two"
+    Then I expect there to be 4 cards with the value "2"
 
-  Scenario: I want there to be 4 cards with the face value Three
+  Scenario: I want there to be 4 cards with the face value 3
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Three"
+    Then I expect there to be 4 cards with the value "3"
 
-  Scenario: I want there to be 4 cards with the face value Four
+  Scenario: I want there to be 4 cards with the face value 4
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Four"
+    Then I expect there to be 4 cards with the value "4"
 
-  Scenario: I want there to be 4 cards with the face value Five
+  Scenario: I want there to be 4 cards with the face value 5
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Five"
+    Then I expect there to be 4 cards with the value "5"
 
-  Scenario: I want there to be 4 cards with the face value Six
+  Scenario: I want there to be 4 cards with the face value 6
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Six"
+    Then I expect there to be 4 cards with the value "6"
 
-  Scenario: I want there to be 4 cards with the face value Seven
+  Scenario: I want there to be 4 cards with the face value 7
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Seven"
+    Then I expect there to be 4 cards with the value "7"
 
-  Scenario: I want there to be 4 cards with the face value Eight
+  Scenario: I want there to be 4 cards with the face value 8
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Eight"
+    Then I expect there to be 4 cards with the value "8"
 
-  Scenario: I want there to be 4 cards with the face value Nine
+  Scenario: I want there to be 4 cards with the face value 9
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Nine"
+    Then I expect there to be 4 cards with the value "9"
 
-  Scenario: I want there to be 4 cards with the face value Ten
+  Scenario: I want there to be 4 cards with the face value 10
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Ten"
+    Then I expect there to be 4 cards with the value "10"
 
-  Scenario: I want there to be 4 cards with the face value Jack
+  Scenario: I want there to be 4 cards with the face value J
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Jack"
+    Then I expect there to be 4 cards with the value "J"
 
-  Scenario: I want there to be 4 cards with the face value Queen
+  Scenario: I want there to be 4 cards with the face value Q
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "Queen"
+    Then I expect there to be 4 cards with the value "Q"
 
-  Scenario: I want there to be 4 cards with the face value King
+  Scenario: I want there to be 4 cards with the face value K
     When I have created a basic deck
-    Then I expect there to be 4 cards with the value "King"
+    Then I expect there to be 4 cards with the value "K"
