@@ -23,12 +23,12 @@ RSpec.describe Pile, type: :model do
       end
       it 'should contain Ace of Diamonds' do
         sink = Pile.create_pile!({Name: 'Sink2', pile_type: 'sink'})
-        Card.create!({value: 'Ace', suit: 'Diamonds', pile: sink})
+        Card.create!({value: 'A', suit: 'D', pile: sink})
         counter = 0
         Pile.where(Name: 'Sink2').each do |pile|
           pile.cards.each do |card|
-            if card.suit.eql? 'Diamonds'
-              counter += 1 if card.value.eql? 'Ace'
+            if card.suit.eql? 'D'
+              counter += 1 if card.value.eql? 'A'
             end
           end
         end
@@ -42,12 +42,12 @@ RSpec.describe Pile, type: :model do
       end
       it 'should contain Ace of Spades' do
         hand = Pile.create_pile!({Name: 'Hand2', pile_type: 'hand'})
-        Card.create!({value: 'Ace', suit: 'Spades', pile: hand})
+        Card.create!({value: 'A', suit: 'S', pile: hand})
         counter = 0;
         Pile.where(Name: 'Hand2').each do |pile|
           pile.cards.each do |card|
-            if card.suit.eql? 'Spades'
-              counter += 1 if card.value.eql? 'Ace'
+            if card.suit.eql? 'S'
+              counter += 1 if card.value.eql? 'A'
             end
           end
         end
@@ -96,8 +96,8 @@ RSpec.describe Pile, type: :model do
         Pile.create_deck!(Name: 'Deck', pile_type: 'deck')
         deck = Pile.find_by(Name: 'Deck')
         deck.shuffle_pile
-        possible_suits = ['Diamonds','Spades','Hearts','Clubs']
-        possible_values = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
+        possible_suits = %w[D S H C]
+        possible_values = %w[A 2 3 4 5 6 7 8 9 10 J Q K]
         spot = 0
         is_changed = false
         possible_values.each do |value|

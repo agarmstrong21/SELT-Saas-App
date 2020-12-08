@@ -20,8 +20,8 @@ class Pile < ApplicationRecord
 
   # Creating deck method that will create a pile named 'deck' This will contain all 52 cards needed for a full deck.
   def self.create_deck!(params)
-    possible_suits = ['Diamonds','Spades','Hearts','Clubs']
-    possible_values = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
+    possible_suits = %w[D S H C]
+    possible_values = %w[A 2 3 4 5 6 7 8 9 10 J Q K]
     deck = Pile.create!({ Name: params[:Name], pile_type: 'deck', visible: false })
     possible_values.each do |value|
       possible_suits.each do |suit|

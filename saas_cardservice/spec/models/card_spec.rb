@@ -6,8 +6,8 @@ RSpec.describe Card, type: :model do
     context 'create a card' do
       it 'should create a seven of clubs' do
         sink = Pile.create_pile!({Name: 'Sink1', pile_type: 'sink' })
-        card = Card.create_card!({value: "Seven", suit: "Clubs", pile: sink})
-        expect (card.suit.eql? "Clubs") && (card.value.eql? "Seven")
+        card = Card.create_card!({value: "7", suit: "C", pile: sink})
+        expect (card.suit.eql? "C") && (card.value.eql? "7")
       end
     end
     context 'try to create a card with bad values' do

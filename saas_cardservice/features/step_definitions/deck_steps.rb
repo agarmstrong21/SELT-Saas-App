@@ -39,8 +39,8 @@ end
 
 Then(/^I should see that the deck has changed order$/) do
   deck = Pile.find_by(Name: 'Deck')
-  possible_suits = ['Diamonds','Spades','Hearts','Clubs']
-  possible_values = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
+  possible_suits = %w[D S H C]
+  possible_values = %w[A 2 3 4 5 6 7 8 9 10 J Q K]
   spot = 0
   is_changed = false
   possible_values.each do |value|

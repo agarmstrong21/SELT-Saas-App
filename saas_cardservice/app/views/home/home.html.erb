@@ -14,12 +14,14 @@
     <h2>Decks</h2>
     <div class="piles">
       <% decks.each do |deck| %>
-        <% if deck.visible %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
+        <% if deck.visible && !deck.cards.first.nil?%>
+          <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
-              <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+              <div style="background: #000000; border-radius: 5px"><%=  deck.Name %></div>
               <div class="dropdown" style="position: static;">
-                <button class="dropbtn" data-toggle="dropdown">≡<span class="caret"></span></button>
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                  <span class="caret"></span></button>
+                <!--<button class="dropbtn" data-toggle="dropdown">≡<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li class="dropdown-submenu">
                   <a href="#"><%= "Draw from #{deck.Name}" %><span class="caret"></span></a>
@@ -40,14 +42,14 @@
                     <a href="#"><%= "Delete #{deck.Name}" %></a>
                     <% end %>
                   </li>
-                </ul>
+                </ul>-->
               </div>
             </div>
           </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
+          <div class="pile" style="background-image: url(<%= image_url('red_back.png') %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
               <div class="dropdown">
@@ -96,15 +98,15 @@
     <div class="piles">
       <% sinks = Pile.where(pile_type: 'sink') %>
       <% sinks.each do |sink| %>
-        <% if sink.visible %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/king_of_hearts2.png'); background-repeat: no-repeat;" >
+        <% if sink.visible && !sink.cards.first.nil?%>
+          <div class="pile" style="background-image: url(<%= image_url(sink.cards.first.image) %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>
           </div>
           <div style="background: #3e8e41"></div>
         <% else %>
-          <div class="pile" style="background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png'); background-repeat: no-repeat;" >
+          <div class="pile" style="background-image: url(<%= image_url("red_back.png") %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
             </div>

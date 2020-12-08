@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 2020_12_03_232024) do
     t.string "suit"
     t.string "value"
     t.decimal "position"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pile_id"
     t.index ["pile_id"], name: "index_cards_on_pile_id"
   end
+
 
   create_table "piles", force: :cascade do |t|
     t.string "Name", null: false
