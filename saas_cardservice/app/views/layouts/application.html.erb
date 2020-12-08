@@ -4,18 +4,32 @@
     <title>SaasCardservice</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-
+  <% if @current_user %>
+    <% flash[:notice] = "Logged in as #{@current_user.user_id}" %>
+    <%= button_to "Logout",logout_path, method: :delete, id: 'logout' %>
+  <% elsif !@current_user %>
+    <%= button_to "Login/Sign-Up",login_path, method: :get, id: 'signupLogin' %>
+  <% end %>
+  <% if flash[:notice] %>
+    <div class="alert alert-danger">
+      <div class="message" id="notice">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  <% elsif flash[:warning] %>
+    <div class="alert alert-danger">
+      <div class="message" id="warning">
+        <%= flash[:warning] %>
+      </div>
+    </div>
+  <% end %>
     <div class="container" style="background: #0c0c0c; color: #f0f0f0; padding:10px">
       <h1 class="title" >Team 6 Card Service Application</h1>
     </div>
-
-
     <%= yield %>
   </body>
 </html>
