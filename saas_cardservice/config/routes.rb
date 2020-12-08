@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   get 'piles/index'
   resources :cards
   get 'home/home'
+  resources :users
+  match '/login', to: 'sessions#new', via: :get
+  match '/login_create', to: 'sessions#create', via: :post
+  match '/logout', to: 'sessions#destroy', via: :delete
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
