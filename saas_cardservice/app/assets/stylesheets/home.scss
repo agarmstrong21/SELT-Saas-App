@@ -12,6 +12,8 @@
 }
 
 .piles {
+  display:flex;
+  flex-direction:row;
   padding: 10px;
   height:200px;
   width:90%;

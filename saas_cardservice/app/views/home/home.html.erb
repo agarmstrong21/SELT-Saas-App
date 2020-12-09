@@ -18,36 +18,43 @@
           <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
               <div style="background: #000000; border-radius: 5px"><%=  deck.Name %></div>
-              <div class="dropdown" style="position: static;">
+              <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                   <span class="caret"></span></button>
-                <!--<button class="dropbtn" data-toggle="dropdown">≡<span class="caret"></span></button>
                 <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="#">Make Pile Visible</a></li>
+                  <li><a tabindex="-1" href="#">Reshuffle</a></li>
                   <li class="dropdown-submenu">
-                  <a href="#"><%= "Draw from #{deck.Name}" %><span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <% piles = Pile.all %>
-                    <% piles.each do |pile| %>
-                    <li>
-                      <a href="#"><%= "#{pile.Name}" %></a>
-                    </li>
-                    <% end %>
-                  </ul>
+                    <a class="test" tabindex="-1" href="#">Draw a Card <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <% piles = Pile.all %>
+                      <% piles.each do |pile| %>
+                        <% unless pile.Name.eql? deck.Name %>
+                          <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                        <%  end %>
+                      <% end %>
+                    </ul>
                   </li>
-                  <li>
-                    <a href="#"><%= "Reshuffle #{deck.Name}" %></a>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Delete <%= deck.Name %> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <% piles = Pile.all %>
+                      <% piles.each do |pile| %>
+                        <% unless pile.Name.eql? deck.Name %>
+                          <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                        <%  end %>
+                      <% end %>
+                    </ul>
                   </li>
-                  <li>
-                    <% if decks.size > 1 %>
-                    <a href="#"><%= "Delete #{deck.Name}" %></a>
-                    <% end %>
-                  </li>
-                </ul>-->
+                </ul>
+              </div>
               </div>
             </div>
           </div>
           </div>
           <div style="background: #3e8e41"></div>
+
+<!-- DECK VISIBLE ELSE OPTION -->
         <% else %>
           <div class="pile" style="background-image: url(<%= image_url('red_back.png') %>); background-repeat: no-repeat;" >
             <div style="padding: 25px">
@@ -56,20 +63,28 @@
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                   <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a tabindex="-1" href="#">HTML</a></li>
-                  <li><a tabindex="-1" href="#">CSS</a></li>
+                  <li><a tabindex="-1" href="#">Make Pile Visible</a></li>
+                  <li><a tabindex="-1" href="#">Reshuffle</a></li>
                   <li class="dropdown-submenu">
-                    <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                    <a class="test" tabindex="-1" href="#">Draw a Card <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                      <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                      <li class="dropdown-submenu">
-                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">3rd level dropdown</a></li>
-                          <li><a href="#">3rd level dropdown</a></li>
-                        </ul>
-                      </li>
+                      <% piles = Pile.all %>
+                      <% piles.each do |pile| %>
+                        <% unless pile.Name.eql? deck.Name %>
+                          <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                        <%  end %>
+                      <% end %>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Delete <%= deck.Name %> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <% piles = Pile.all %>
+                      <% piles.each do |pile| %>
+                        <% unless pile.Name.eql? deck.Name %>
+                          <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                        <%  end %>
+                      <% end %>
                     </ul>
                   </li>
                 </ul>
