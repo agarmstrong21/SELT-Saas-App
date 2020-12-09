@@ -173,6 +173,30 @@
     <div class ="piles_container">
       <h2>Player Hand</h2>
       <div class="piles">
+        <% Pile.where(pile_type: 'hand').each do |hand| %>
+          <% hand.cards.each do |card| %>
+            <div class="pile" style="background-image: url(<%= image_url(card.image) %>); background-repeat: no-repeat;" >
+              <div style="padding: 25px">
+                <div style="background: #000000; border-radius: 5px"><%= card.image %> </div>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a class="test" tabindex="-1" href="#">Move to<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <% Pile.all.each do |pile| %>
+                          <% unless pile.Name.eql? hand.Name %>
+                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                          <%  end %>
+                        <% end %>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </body>
