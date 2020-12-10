@@ -16,6 +16,7 @@
     <div class="piles_container">
       <h2>Decks</h2>
       <div class="piles">
+        <% all_decks = Pile.where(pile_type: 'deck') %>
         <% Pile.where(pile_type: 'deck').each do |deck| %>
           <% if deck.visible && !deck.cards.first.nil?%>
             <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;" >
@@ -24,24 +25,24 @@
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="#">Make Pile Hidden</a></li>
-                    <li><a tabindex="-1" href="#">Reshuffle</a></li>
+                    <li><a tabindex="-1" onmousedown="<% deck.change_visibility(deck.id) %> window.location.reload();" >Make Pile Hidden</a></li>
+                    <li><a tabindex="-1" >Reshuffle</a></li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Draw a Card <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Draw a Card <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? deck.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
                     </li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Delete <%= deck.Name %> <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Delete <%= deck.Name %> <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? deck.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
@@ -58,24 +59,24 @@
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="#">Make Pile Visible</a></li>
-                    <li><a tabindex="-1" href="#">Reshuffle</a></li>
+                    <li><a tabindex="-1" onmousedown="<% deck.change_visibility(deck.id) %> window.location.reload();" >Make Pile Visible</a></li>
+                    <li><a tabindex="-1" >Reshuffle</a></li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Draw a Card <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Draw a Card <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? deck.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
                     </li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Delete <%= deck.Name %> <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Delete <%= deck.Name %> <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? deck.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
@@ -105,23 +106,23 @@
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="#">Make Pile Hidden</a></li>
+                    <li><a tabindex="-1" >Make Pile Hidden</a></li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Draw a Card <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Draw a Card <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
                     </li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Delete <%= sink.Name %> <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Delete <%= sink.Name %> <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
@@ -138,23 +139,23 @@
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a tabindex="-1" href="#">Make Pile Visible</a></li>
+                    <li><a tabindex="-1" >Make Pile Visible</a></li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Draw a Card<span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Draw a Card<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
                     </li>
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Delete <%= sink.Name %> <span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Delete <%= sink.Name %> <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
@@ -183,11 +184,11 @@
                   <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1" href="#">Move to<span class="caret"></span></a>
+                      <a class="test" tabindex="-1" >Move to<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <% Pile.all.each do |pile| %>
                           <% unless pile.Name.eql? hand.Name %>
-                            <li><a tabindex="-1" href="#">Move to <%=  pile.Name  %></a></li>
+                            <li><a tabindex="-1" >Move to <%=  pile.Name  %></a></li>
                           <%  end %>
                         <% end %>
                       </ul>
