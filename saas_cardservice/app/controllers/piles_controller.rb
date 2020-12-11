@@ -51,6 +51,13 @@ class PilesController < ApplicationController
     end
   end
 
+  def change_visibility
+    pile_hash = params[:pile]
+    pile = Pile.find_by(Name: pile_hash[:visible])
+    pile.update_attribute(:visible, !pile[:visible])
+    redirect_to home_home_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_pile
