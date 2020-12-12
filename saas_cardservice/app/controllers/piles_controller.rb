@@ -1,6 +1,5 @@
 class PilesController < ApplicationController
   before_action :set_pile, only: [:show, :edit, :update, :destroy]
-
   # GET /piles
   # GET /piles.json
   def index
@@ -55,6 +54,13 @@ class PilesController < ApplicationController
     pile_hash = params[:pile]
     pile = Pile.find_by(Name: pile_hash[:visible])
     pile.update_attribute(:visible, !pile[:visible])
+    redirect_to home_home_path
+  end
+
+  def move_card
+    pile_hash = params[:pile]
+    pile = Pile.find_by(Name: pile_hash[:deck_from])
+    pile.move_card(Pile.find_by(Name: pile_hash[:deck_to]))
     redirect_to home_home_path
   end
 

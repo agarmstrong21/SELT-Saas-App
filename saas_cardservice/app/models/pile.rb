@@ -56,9 +56,4 @@ class Pile < ApplicationRecord
     end
   end
 
-  def self.change_visibility(deck_id)
-    pile = Pile.find(deck_id)
-    pile.update_attribute(:visible, !pile[:visible])
-  end
-
 end

@@ -11,160 +11,168 @@
 <!--  BODY OF WEBPAGE-->
 <body style="background: url(https://cdn11.bigcommerce.com/s-c1tzcg0txe/images/stencil/500x659/products/3652/2091/ozonepark_2460_1400448186__18521.1490639038.jpg?c=2)">
 
-  <div style="min-height:8vh"></div>
-    <div>
-      <%= form_tag piles_change_visibility_path, :class => 'form' %>
-        <%= label :pile, :visible, 'Select the pile to switch visibility.'%>
-        <%= select :pile, :visible, Pile.all.collect{|pile| [pile.Name]} %>
-        <%= submit_tag "Change Visibility" %>
-    </div>
-    <div style="min-height:8vh"></div>
+<div style="min-height:8vh"></div>
+<div>
+  <%= form_tag piles_change_visibility_path, :class => 'form' %>
+  <%= label :pile, :visible, 'Select the pile to switch visibility.' %>
+  <%= select :pile, :visible, Pile.all.collect { |pile| [pile.Name] } %>
+  <%= submit_tag "Change Visibility" %>
+</div>
+<div>
+  <%= form_tag piles_move_card_path, :class => 'form' %>
+  <%= label :pile, :deck_from, 'Move card from ' %>
+  <%= select :pile, :deck_from, Pile.all.collect { |pile| [pile.Name] } %>
+  <%= label :pile, :deck_to, ' to ' %>
+  <%= select :pile, :deck_to, Pile.all.collect { |pile| [pile.Name] } %>
+  <%= submit_tag "Move Top Card" %>
+</div>
+<div style="min-height:8vh"></div>
 
-    <div class="piles_container">
-      <h2>Decks</h2>
-      <div class="piles">
-        <% Pile.where(pile_type: 'deck').each do |deck| %>
-          <% if deck.visible && !deck.cards.first.nil? %>
-            <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;">
-              <div style="padding: 25px">
-                <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
-              </div>
-            </div>
-            <!-- DECK VISIBLE ELSE OPTION -->
-          <% else %>
-            <div class="pile" style="background-image: url(<%= image_url('red_back.png') %>); background-repeat: no-repeat;">
-              <div style="padding: 25px">
-                <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+<div class="piles_container">
+  <h2>Decks</h2>
+  <div class="piles">
+    <% Pile.where(pile_type: 'deck').each do |deck| %>
+      <% if deck.visible && !deck.cards.first.nil? %>
+        <div class="pile" style="background-image: url(<%= image_url(deck.cards.first.image) %>); background-repeat: no-repeat;">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+          </div>
+        </div>
+        <!-- DECK VISIBLE ELSE OPTION -->
+      <% else %>
+        <div class="pile" style="background-image: url(<%= image_url('red_back.png') %>); background-repeat: no-repeat;">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 
-    <!--DISCARD PILES SECTION-->
+<!--DISCARD PILES SECTION-->
 
-    <div style="min-height:8vh"></div>
+<div style="min-height:8vh"></div>
 
-    <div class=piles_container>
-      <h2>Discard Piles</h2>
-      <div class="piles">
-        <% Pile.where(pile_type: 'sink').each do |sink| %>
-          <% if sink.visible && !sink.cards.first.nil? %>
-            <div class="pile" style="background-image: url(<%= image_url(sink.cards.first.image) %>); background-repeat: no-repeat;">
-              <div style="padding: 25px">
-                <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="caret"></span></button>
+<div class=piles_container>
+  <h2>Discard Piles</h2>
+  <div class="piles">
+    <% Pile.where(pile_type: 'sink').each do |sink| %>
+      <% if sink.visible && !sink.cards.first.nil? %>
+        <div class="pile" style="background-image: url(<%= image_url(sink.cards.first.image) %>); background-repeat: no-repeat;">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a tabindex="-1">Make Pile Hidden</a></li>
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1">Draw a Card <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a tabindex="-1">Make Pile Hidden</a></li>
-                    <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1">Draw a Card <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <% Pile.all.each do |pile| %>
-                          <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
-                          <% end %>
-                        <% end %>
-                      </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1">Delete <%= sink.Name %> <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <% Pile.all.each do |pile| %>
-                          <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
-                          <% end %>
-                        <% end %>
-                      </ul>
-                    </li>
+                    <% Pile.all.each do |pile| %>
+                      <% unless pile.Name.eql? sink.Name %>
+                        <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
+                      <% end %>
+                    <% end %>
                   </ul>
-                </div>
-              </div>
-            </div>
-            <!-- DISCARD VISIBLE ELSE OPTION -->
-          <% else %>
-            <div class="pile" style="background-image: url(<%= image_url('red_back.png') %>); background-repeat: no-repeat;">
-              <div style="padding: 25px">
-                <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="caret"></span></button>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1">Delete <%= sink.Name %> <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a tabindex="-1">Make Pile Visible</a></li>
-                    <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1">Draw a Card<span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <% Pile.all.each do |pile| %>
-                          <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
-                          <% end %>
-                        <% end %>
-                      </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1">Delete <%= sink.Name %> <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <% Pile.all.each do |pile| %>
-                          <% unless pile.Name.eql? sink.Name %>
-                            <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
-                          <% end %>
-                        <% end %>
-                      </ul>
-                    </li>
+                    <% Pile.all.each do |pile| %>
+                      <% unless pile.Name.eql? sink.Name %>
+                        <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
+                      <% end %>
+                    <% end %>
                   </ul>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <div style="min-height:8vh"></div>
-
-    <div class="piles_container">
-      <h2>Player Hand</h2>
-      <div class="piles">
-        <% Pile.where(pile_type: 'hand').each do |hand| %>
-          <!-- TODO: an if statement that will only show the player's hand that has the current session_token to match.-->
-          <% hand.cards.each do |card| %>
-            <div class="pile" style="background-image: url(<%= image_url(card.image) %>); background-repeat: no-repeat;">
-              <div style="padding: 25px">
-                <div style="background: #000000; border-radius: 5px"><%= card.image %> </div>
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="caret"></span></button>
+          </div>
+        </div>
+        <!-- DISCARD VISIBLE ELSE OPTION -->
+      <% else %>
+        <div class="pile" style="background-image: url(<%= image_url('red_back.png') %>); background-repeat: no-repeat;">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a tabindex="-1">Make Pile Visible</a></li>
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1">Draw a Card<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li class="dropdown-submenu">
-                      <a class="test" tabindex="-1">Move to<span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <% Pile.all.each do |pile| %>
-                          <% unless pile.Name.eql? hand.Name %>
-                            <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
-                          <% end %>
-                        <% end %>
-                      </ul>
-                    </li>
+                    <% Pile.all.each do |pile| %>
+                      <% unless pile.Name.eql? sink.Name %>
+                        <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
+                      <% end %>
+                    <% end %>
                   </ul>
-                </div>
-              </div>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1">Delete <%= sink.Name %> <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% Pile.all.each do |pile| %>
+                      <% unless pile.Name.eql? sink.Name %>
+                        <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
+                      <% end %>
+                    <% end %>
+                  </ul>
+                </li>
+              </ul>
             </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    </body>
-    </html>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div style="min-height:8vh"></div>
+
+<div class="piles_container">
+  <h2>Player Hand</h2>
+  <div class="piles">
+    <% Pile.where(pile_type: 'hand').each do |hand| %>
+      <!-- TODO: an if statement that will only show the player's hand that has the current session_token to match.-->
+      <% hand.cards.each do |card| %>
+        <div class="pile" style="background-image: url(<%= image_url(card.image) %>); background-repeat: no-repeat;">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= card.image %> </div>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1">Move to<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% Pile.all.each do |pile| %>
+                      <% unless pile.Name.eql? hand.Name %>
+                        <li><a tabindex="-1">Move to <%= pile.Name %></a></li>
+                      <% end %>
+                    <% end %>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</body>
+</html>
 
 
-    <!-- Citing: https://stackoverflow.com/questions/53394403/html-png-background
-                 https://www.webucator.com/how-to/how-create-boxes-with-rounded-corners-css.cfm
-                 https://stackoverflow.com/questions/40690282/is-div-style-width-height-background-css
-                 https://www.w3schools.com/howto/howto_css_dropdown.asp
+<!-- Citing: https://stackoverflow.com/questions/53394403/html-png-background
+             https://www.webucator.com/how-to/how-create-boxes-with-rounded-corners-css.cfm
+             https://stackoverflow.com/questions/40690282/is-div-style-width-height-background-css
+             https://www.w3schools.com/howto/howto_css_dropdown.asp
 
 
 
-    Use View Port (vh, vw) come from the complete page, but use % for the % of the parent element.
+Use View Port (vh, vw) come from the complete page, but use % for the % of the parent element.

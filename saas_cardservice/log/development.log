@@ -27348,3 +27348,1904 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 111ms (Views: 107.8ms | ActiveRecord: 2.8ms | Allocations: 28205)
 
 
+Started GET "/" for ::1 at 2020-12-11 21:50:52 -0600
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for ::1 at 2020-12-11 21:50:52 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (1.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 1592.0ms | Allocations: 193209)
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 1581.6ms | Allocations: 193574)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1831ms (Views: 1787.7ms | ActiveRecord: 4.2ms | Allocations: 209565)
+
+
+Completed 200 OK in 1827ms (Views: 1783.1ms | ActiveRecord: 3.2ms | Allocations: 209312)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:50:59 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"CLwWtN98Rv2rGUg39ViHgkgJ5p/zh8tWTXGluOuPCud0EzgXheaDWYsq8A2z+Whvbybc9/RCc2y9M7TCiMU1yg==", "pile"=>{"visible"=>"Deck2"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Deck2"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (1.1ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 03:50:59.962175"], ["id", 2]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 25ms (ActiveRecord: 15.6ms | Allocations: 3762)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:51:00 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 84.3ms | Allocations: 24162)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 140ms (Views: 136.7ms | ActiveRecord: 2.9ms | Allocations: 30746)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:51:05 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"VxRyGpQD/yEgUQ7OQ4aCEbUc90rgqastwGzz3Omc3PUru1y5zpk6hQBitvQFJ238kjPNIudsExcwLuKmitbj2A==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (1.6ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 0], ["updated_at", "2020-12-12 03:51:05.710648"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 23ms (ActiveRecord: 13.4ms | Allocations: 3351)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:51:05 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 52.1ms | Allocations: 21635)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 94.9ms | ActiveRecord: 2.4ms | Allocations: 40264)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:51:06 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"2l4sGeAShrLOMBTRPALFfOnuMpdpeSYfxSHcJuJbJYWm8QK6uohDFu4DrOt6oyqRzsEI/268niU1Y81cgREaqA==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (7.2ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 03:51:06.710447"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 27ms (ActiveRecord: 18.1ms | Allocations: 3323)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:51:06 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 60.5ms | Allocations: 23726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 107.8ms | ActiveRecord: 2.6ms | Allocations: 42345)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:51:10 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"0d0GMJoA7d7dPCvLOEW7QXhxZzq261zbm4ZE0h/r0pqtciiTwJooev0Pk/F+5FSsX15dUrEu5OFrxFWofKHttw==", "pile"=>{"visible"=>"deck3"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "deck3"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (7.5ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 03:51:11.003877"], ["id", 6]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 30ms (ActiveRecord: 19.1ms | Allocations: 3331)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:51:11 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 66.0ms | Allocations: 25019)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 112.4ms | ActiveRecord: 3.0ms | Allocations: 31585)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:51:18 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"sBcr09mm22iHxejvr8IePrBRMi2+T8uIDBQTvCavABDMuAVwgzwezKf2UNXpY/HTl34IRbmKc7L8VgLGReU/PQ==", "pile"=>{"visible"=>"Main Sink"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Sink"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (7.1ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 03:51:18.163078"], ["id", 3]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 31ms (ActiveRecord: 17.9ms | Allocations: 5456)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:51:18 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:26
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:28
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:27
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:66
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:76
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:100
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:110
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:131
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:133
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:144
+  Rendered home/home.html.erb within layouts/application (Duration: 75.0ms | Allocations: 26950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 126.9ms | ActiveRecord: 3.0ms | Allocations: 33502)
+
+
+Started GET "/" for ::1 at 2020-12-11 21:56:41 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 128.3ms | Allocations: 47541)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 205ms (Views: 196.4ms | ActiveRecord: 6.5ms | Allocations: 56483)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:56:49 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"4eltEluLMoU0sD3aihpMzV76PEk07CCaFUxNM1S6X2RWqVJF19wevYDpxFGGUVuAO8UygYITcyZhdyCh76/KLQ==", "pile"=>{"visible"=>"Deck2"}, "commit"=>"Move Top Card"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 820)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:58:58 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"4eltEluLMoU0sD3aihpMzV76PEk07CCaFUxNM1S6X2RWqVJF19wevYDpxFGGUVuAO8UygYITcyZhdyCh76/KLQ==", "pile"=>{"visible"=>"Deck2"}, "commit"=>"Move Top Card"}
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Deck2"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (1.5ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 0], ["updated_at", "2020-12-12 03:58:58.743565"], ["id", 2]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 29ms (ActiveRecord: 12.1ms | Allocations: 8694)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:58:58 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 90.8ms | Allocations: 34979)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 159ms (Views: 151.5ms | ActiveRecord: 5.0ms | Allocations: 42611)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:59:10 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"BtZk4517f5OwcByRRmhY4H2sA3iU+mvQgISgolMj7/Wxllu0ESxTqwQp5RpKI0+tGJMNsCIFOGz0v80w6DZ6vA==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.8ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (7.3ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 0], ["updated_at", "2020-12-12 03:59:10.764133"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 31ms (ActiveRecord: 17.0ms | Allocations: 3287)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:59:10 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 58.4ms | Allocations: 24411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 106.9ms | ActiveRecord: 2.7ms | Allocations: 30950)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:59:14 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"C0lcc+9noO1hpcvl6eUGm6UfjKx7XN70AwMEhZdKxDO8CWMkYzCM1dX8Mm7lrhHWwCCCZM2jjUh3OGkXLF9Reg==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (7.6ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 03:59:14.512396"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 32ms (ActiveRecord: 21.6ms | Allocations: 3300)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:59:14 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 68.8ms | Allocations: 26506)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 111.1ms | ActiveRecord: 2.7ms | Allocations: 33048)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:59:19 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"P/CqJgQ1JWX4Q5ZbqSVsW0jXnprSd3udf9fP50lX29SIsJVxiGIJXUwab9ClbnsWLeiQUmSIKCEL7KJ18kJOnQ==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[36mPile Update (8.9ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 0], ["updated_at", "2020-12-12 03:59:19.480671"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:57:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 33ms (ActiveRecord: 20.9ms | Allocations: 3277)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 21:59:19 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 64.9ms | Allocations: 24409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 110.5ms | ActiveRecord: 2.6ms | Allocations: 30955)
+
+
+Started GET "/" for ::1 at 2020-12-11 21:59:27 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 94.7ms | Allocations: 36770)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 153ms (Views: 145.8ms | ActiveRecord: 6.4ms | Allocations: 43452)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 21:59:32 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"qFBweG3KPJJ1+ixUpx31pN5ZP+wf7B3ul1F9ZoXXBr0fEE8v4Z0QqsGj1d+rVuLpu2YxJKkTTlLjahD0PsKT9A==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 754)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-12-11 22:00:45 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 100.2ms | Allocations: 41220)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 157ms (Views: 150.6ms | ActiveRecord: 5.4ms | Allocations: 48344)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 22:00:48 -0600
+  
+SyntaxError (C:/Users/Owner/Documents/Fall 2020/SELT/Team6_SELT2020/saas_cardservice/app/controllers/piles_controller.rb:3: syntax error, unexpected [, expecting do or '{' or '('
+...rify_authenticity_token, only [:change_visibility, :move_car...
+...                              ^):
+  
+app/controllers/piles_controller.rb:3: syntax error, unexpected [, expecting do or '{' or '('
+app/controllers/piles_controller.rb:3: syntax error, unexpected [, expecting do or '{' or '('
+app/controllers/piles_controller.rb:3: syntax error, unexpected [, expecting do or '{' or '('
+Started GET "/" for ::1 at 2020-12-11 22:01:10 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 102.9ms | Allocations: 55088)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 166ms (Views: 160.6ms | ActiveRecord: 4.6ms | Allocations: 66080)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 22:01:15 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"HMP6VveDSWYTpCbrYXw3t0plwBCxcmsVT5RCkjGSSgqrg8UBe9RlXqf932BtNyD6L1rO2AeNOKk7ry8AioffQw==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 789)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-12-11 22:03:21 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.9ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 135.6ms | Allocations: 40769)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 199ms (Views: 189.2ms | ActiveRecord: 8.7ms | Allocations: 48374)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 22:03:24 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"xCk/fwox2/ev34PtalcOtry0WMZ52P7BVHF/ZDoDM9FzaQAohmb3zxuGemZmHBn72YtWDs8nrX0gShL2gRammA==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+Can't verify CSRF token authenticity.
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:55:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[36mPile Update (1.0ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 04:03:24.994794"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 27ms (ActiveRecord: 13.9ms | Allocations: 3623)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 22:03:25 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 64.2ms | Allocations: 26506)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 110.8ms | ActiveRecord: 2.5ms | Allocations: 33067)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 22:03:28 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"8t5HuR7dV/mehbBQdfiNkm+UaD/erMU2/zbjMErogVRFnnjukop7wSrcSdt5s5rfCqtm92hTloqLDY6i8f0UHQ==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+Can't verify CSRF token authenticity.
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:55:in `change_visibility'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[36mPile Update (8.6ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 0], ["updated_at", "2020-12-12 04:03:28.500063"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 29ms (ActiveRecord: 19.0ms | Allocations: 3397)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 22:03:28 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (6.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 65.7ms | Allocations: 24411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 105.9ms | ActiveRecord: 9.0ms | Allocations: 31406)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 22:03:32 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"4kjYQgghOIQvSNEikbEoMEVyS778ky2foywOeeaIzq5VCOcVhHYUvJsRKKmd+j99IE1FdkpsfiPXF2PrXZ1b5w==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+Can't verify CSRF token authenticity.
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:55:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[36mPile Update (1.8ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 04:03:32.026262"], ["id", 1]]
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:56:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 23ms (ActiveRecord: 14.2ms | Allocations: 3383)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 22:03:32 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 84.7ms | Allocations: 38558)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 140ms (Views: 135.7ms | ActiveRecord: 2.9ms | Allocations: 45359)
+
+
+Started GET "/" for ::1 at 2020-12-11 22:04:32 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:18:in `collect'
+  [1m[36mCACHE Pile Load (0.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:24:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:26:in `collect'
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:34
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:35
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:61
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:62
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:63
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:74
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:84
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:108
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:118
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:139
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:141
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:152
+  Rendered home/home.html.erb within layouts/application (Duration: 429.3ms | Allocations: 98449)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 516ms (Views: 494.4ms | ActiveRecord: 8.7ms | Allocations: 107610)
+
+
+Started POST "/piles/change_visibility" for ::1 at 2020-12-11 22:04:37 -0600
+Processing by PilesController#change_visibility as HTML
+  Parameters: {"authenticity_token"=>"kCVuBln5F15v6wdiT1VowZVKYdCKuZNRrovsTKkBcwwnZVFR1a47Ztuy/ulDHn+M8HVvGDxGwO3asIHeEhTmRQ==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Change Visibility"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 823)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (6.0.3.4) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-12-11 22:13:14 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:19:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:21:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:29
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:31
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:57
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:58
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:69
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:79
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:103
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:113
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:134
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:136
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  Rendered home/home.html.erb within layouts/application (Duration: 241.9ms | Allocations: 98788)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 314ms (Views: 300.9ms | ActiveRecord: 5.3ms | Allocations: 108856)
+
+
+Started POST "/piles/move_card" for ::1 at 2020-12-11 22:13:22 -0600
+Processing by PilesController#move_card as HTML
+  Parameters: {"authenticity_token"=>"ZIboSCnhRiT4v5pjEkgxm06br3Go5ryUDcjZXCXvHoQYKcbrc3uDgNiMIllU6d52abSVGa8jBK79isgmRqUhqQ==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Move Top Card"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:62:in `move_card'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:63:in `move_card'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 2583)
+
+
+  
+NoMethodError (undefined method `move_card' for nil:NilClass):
+  
+app/controllers/piles_controller.rb:63:in `move_card'
+Started POST "/piles/move_card" for ::1 at 2020-12-11 22:14:01 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PilesController#move_card as HTML
+  Parameters: {"authenticity_token"=>"ZIboSCnhRiT4v5pjEkgxm06br3Go5ryUDcjZXCXvHoQYKcbrc3uDgNiMIllU6d52abSVGa8jBK79isgmRqUhqQ==", "pile"=>{"visible"=>"Main Deck"}, "commit"=>"Move Top Card"}
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:62:in `move_card'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:63:in `move_card'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.1ms | Allocations: 7219)
+
+
+  
+NoMethodError (undefined method `move_card' for nil:NilClass):
+  
+app/controllers/piles_controller.rb:63:in `move_card'
+Started GET "/" for ::1 at 2020-12-11 22:14:42 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:19:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:21:in `collect'
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:29
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:31
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:57
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:58
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:69
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:79
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:103
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:113
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:134
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:136
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  Rendered home/home.html.erb within layouts/application (Duration: 142.3ms | Allocations: 51241)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 214ms (Views: 205.0ms | ActiveRecord: 6.3ms | Allocations: 58937)
+
+
+Started POST "/piles/move_card" for ::1 at 2020-12-11 22:14:47 -0600
+Processing by PilesController#move_card as HTML
+  Parameters: {"authenticity_token"=>"Sshhyhvby93r10g5s/NZTDjHFsI1Nql26KdE68usau82Z09pQUEOecvk8AP1UrahH+gsqjLzEUwY5VWRqOZVwg==", "pile"=>{"deck_from"=>"Main Sink", "deck_to"=>"Main Deck"}, "commit"=>"Move Top Card"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Sink"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:62:in `move_card'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:63:in `move_card'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:43:in `move_card'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:44:in `move_card'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "pile_id" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["pile_id", nil], ["updated_at", "2020-12-12 04:14:48.009221"], ["id", 3]]
+  ↳ app/models/pile.rb:44:in `move_card'
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:44:in `move_card'
+No template found for PilesController#move_card, rendering head :no_content
+Completed 204 No Content in 43ms (ActiveRecord: 14.7ms | Allocations: 7074)
+
+
+Started GET "/" for ::1 at 2020-12-11 22:16:17 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:19:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:21:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:29
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:31
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:57
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:58
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:69
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:79
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:103
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:113
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:134
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:136
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  Rendered home/home.html.erb within layouts/application (Duration: 322.5ms | Allocations: 110086)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 398ms (Views: 384.4ms | ActiveRecord: 5.8ms | Allocations: 118916)
+
+
+Started POST "/piles/move_card" for ::1 at 2020-12-11 22:16:24 -0600
+Processing by PilesController#move_card as HTML
+  Parameters: {"authenticity_token"=>"j0Dr2t+NQnjU5Ku3HcBDRBe7B0mUfSus3JLiNm5qACDz78V5hReH3PTXE41bYaypMJQ9IZO4k5Ys0PNMDSA/DQ==", "pile"=>{"deck_from"=>"Main Sink", "deck_to"=>"Main Deck"}, "commit"=>"Move Top Card"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Sink"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:62:in `move_card'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:63:in `move_card'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:43:in `move_card'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:44:in `move_card'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "pile_id" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["pile_id", nil], ["updated_at", "2020-12-12 04:16:24.325660"], ["id", 8]]
+  ↳ app/models/pile.rb:44:in `move_card'
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:44:in `move_card'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 26ms (ActiveRecord: 13.0ms | Allocations: 5773)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 22:16:24 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:19:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:21:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:29
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:31
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:57
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:58
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:69
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:79
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:103
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:113
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:134
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:136
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  Rendered home/home.html.erb within layouts/application (Duration: 78.9ms | Allocations: 25504)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 128.7ms | ActiveRecord: 3.4ms | Allocations: 32087)
+
+
+Started POST "/piles/move_card" for ::1 at 2020-12-11 22:16:40 -0600
+Processing by PilesController#move_card as HTML
+  Parameters: {"authenticity_token"=>"jZs2HcU5e7u0V6jlsaCIbhj6jPLvorGNLtAFfJPOhrDxNBi+n6O+H5RkEN/3AWeDP9W2muhnCbfekhQG8IS5nQ==", "pile"=>{"deck_from"=>"Main Deck", "deck_to"=>"Main Hand"}, "commit"=>"Move Top Card"}
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:62:in `move_card'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Hand"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:63:in `move_card'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:43:in `move_card'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:44:in `move_card'
+  [1m[36mCard Update (8.2ms)[0m  [1m[33mUPDATE "cards" SET "pile_id" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["pile_id", nil], ["updated_at", "2020-12-12 04:16:40.451482"], ["id", 1]]
+  ↳ app/models/pile.rb:44:in `move_card'
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:44:in `move_card'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 40ms (ActiveRecord: 19.8ms | Allocations: 5306)
+
+
+Started GET "/home/home" for ::1 at 2020-12-11 22:16:40 -0600
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.8ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:19:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:21:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:29
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:31
+  [1m[36mCard Load (3.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:30
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:57
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:58
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:69
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:79
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:103
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:113
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:134
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:136
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:147
+  Rendered home/home.html.erb within layouts/application (Duration: 78.3ms | Allocations: 25501)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 127ms (Views: 119.8ms | ActiveRecord: 6.8ms | Allocations: 32067)
+
+
