@@ -1,5 +1,7 @@
 class PilesController < ApplicationController
   before_action :set_pile, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery prepend: true, with: :exception
+  skip_before_action :verify_authenticity_token
   # GET /piles
   # GET /piles.json
   def index
@@ -50,17 +52,27 @@ class PilesController < ApplicationController
     end
   end
 
+  def button_press
+    if params[:change_visibility]
+      change_visibility
+    else
+      move_card
+    end
+  end
+
   def change_visibility
-    pile_hash = params[:pile]
-    pile = Pile.find_by(Name: pile_hash[:visible])
-    pile.update_attribute(:visible, !pile[:visible])
-    redirect_to home_home_path
+    @form_token = form_authenticity_token
+      pile_hash = params[:pile]
+      pile = Pile.find_by(Name: pile_hash[:visible])
+      pile.update_attribute(:visible, !pile[:visible])
+      redirect_to home_home_path
   end
 
   def move_card
+    @form_token = form_authenticity_token
     pile_hash = params[:pile]
     pile = Pile.find_by(Name: pile_hash[:deck_from])
-    pile.move_card(Pile.find_by(Name: pile_hash[:deck_to]))
+    pile.move_card(Pile.find_by(Name: pile_hash[:deck_to]).id)
     redirect_to home_home_path
   end
 

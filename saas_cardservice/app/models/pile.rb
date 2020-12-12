@@ -41,7 +41,7 @@ class Pile < ApplicationRecord
 
   def move_card(new_pile_id)
     card = cards.first
-    card.update!(pile_id: new_pile_id)
+    card.update_attribute(:pile_id, new_pile_id)
   end
 
   def shuffle_pile

@@ -13,18 +13,20 @@
 
 <div style="min-height:8vh"></div>
 <div>
-  <%= form_tag piles_change_visibility_path, :class => 'form' %>
+  <%= form_tag piles_button_press_path, :class => 'form' %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= label :pile, :visible, 'Select the pile to switch visibility.' %>
   <%= select :pile, :visible, Pile.all.collect { |pile| [pile.Name] } %>
-  <%= submit_tag "Change Visibility" %>
+  <%= submit_tag "Change Visibility", name: 'change_visibility' %>
 </div>
 <div>
-  <%= form_tag piles_move_card_path, :class => 'form' %>
+  <%= form_tag piles_button_press_path, :class => 'form' %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= label :pile, :deck_from, 'Move card from ' %>
   <%= select :pile, :deck_from, Pile.all.collect { |pile| [pile.Name] } %>
   <%= label :pile, :deck_to, ' to ' %>
   <%= select :pile, :deck_to, Pile.all.collect { |pile| [pile.Name] } %>
-  <%= submit_tag "Move Top Card" %>
+  <%= submit_tag "Move Top Card", name: 'move_card' %>
 </div>
 <div style="min-height:8vh"></div>
 
