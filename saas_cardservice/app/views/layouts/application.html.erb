@@ -7,28 +7,31 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-  <% if @current_user %>
-    <% flash[:notice] = "Logged in as #{@current_user.user_id}" %>
-    <%= button_to "Logout",logout_path, method: :delete, id: 'logout' %>
-  <% elsif !@current_user %>
-    <%= button_to "Login/Sign-Up",login_path, method: :get, id: 'signupLogin' %>
-  <% end %>
-  <% if flash[:notice] %>
-    <div class="alert alert-danger">
-      <div class="message" id="notice">
-        <%= flash[:notice] %>
-      </div>
-    </div>
-  <% elsif flash[:warning] %>
-    <div class="alert alert-danger">
-      <div class="message" id="warning">
-        <%= flash[:warning] %>
-      </div>
-    </div>
-  <% end %>
+  <body style="background: url(https://cdn11.bigcommerce.com/s-c1tzcg0txe/images/stencil/500x659/products/3652/2091/ozonepark_2460_1400448186__18521.1490639038.jpg?c=2)">
     <div class="container" style="background: #0c0c0c; color: #f0f0f0; padding:10px">
       <h1 class="title" >Team 6 Card Service Application</h1>
+      <div style="color:black">
+        <% if @current_user %>
+          <% flash[:notice] = "Logged in as #{@current_user.user_id}" %>
+          <%= button_to "Logout",logout_path, method: :delete, id: 'logout' %>
+        <% elsif !@current_user %>
+          <%= button_to "Login/Sign-Up",login_path, method: :get, id: 'signupLogin' %>
+        <% end %>
+      </div>
+
+        <% if flash[:notice] %>
+          <div class="alert alert-danger">
+            <div class="message" id="notice">
+              <%= flash[:notice] %>
+            </div>
+          </div>
+        <% elsif flash[:warning] %>
+          <div class="alert alert-danger">
+            <div class="message" id="warning">
+              <%= flash[:warning] %>
+            </div>
+          </div>
+      <% end %>
     </div>
     <%= yield %>
   </body>

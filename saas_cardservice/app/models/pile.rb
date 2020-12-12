@@ -40,8 +40,10 @@ class Pile < ApplicationRecord
   end
 
   def move_card(new_pile_id)
-    card = cards.first
-    card.update!(pile_id: new_pile_id)
+    card = cards.last
+    card.update_attribute(:pile_id, new_pile_id)
+    pile_length = Pile.find(new_pile_id).cards.length-1
+    card.update_attribute(:position, pile_length)
   end
 
   def shuffle_pile
@@ -50,9 +52,9 @@ class Pile < ApplicationRecord
     until list_of_cards.empty?
       current = list_of_cards.delete(list_of_cards.sample)
       card_to_update = Card.find(current.id)
-      card_to_update.position = index
-      card_to_update.save
+      card_to_update.update_attribute(:position, index)
       index += 1
     end
   end
+
 end

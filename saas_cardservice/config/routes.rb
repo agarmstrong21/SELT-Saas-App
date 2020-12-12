@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'piles/new'
   get 'piles/show'
   get 'piles/index'
+  post 'piles/button_press'
   resources :cards
   get 'home/home'
   resources :users

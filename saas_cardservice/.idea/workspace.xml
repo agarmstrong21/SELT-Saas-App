@@ -279,7 +279,7 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="536e04b2-10e9-4d99-a0fd-73ae7c57a924" name="Default Changelist" comment="" />
@@ -336,10 +336,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added functionality to the cucumber tests." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1360" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607185952652">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="420" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607460409568">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1360" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1440.900@-1920.0.1920.1080" timestamp="1607185952652" />
+    <state x="420" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1607460409568" />
     <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1604864030448">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -388,7 +389,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/saas_cardservice@CreateSink_feature.rcov" NAME="CreateSink.feature Coverage Results" MODIFIED="1604863998841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
+    <SUITE FILE_PATH="coverage/saas_cardservice@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1607322852728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
+    <SUITE FILE_PATH="coverage/saas_cardservice@db_migrate__1_.rcov" NAME="db:migrate (1) Coverage Results" MODIFIED="1607322983924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
     <SUITE FILE_PATH="coverage/saas_cardservice@CreateDeck_feature.rcov" NAME="CreateDeck.feature Coverage Results" MODIFIED="1604714466300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
-    <SUITE FILE_PATH="coverage/saas_cardservice@CreateCard_feature.rcov" NAME="CreateCard.feature Coverage Results" MODIFIED="1604714458567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
+    <SUITE FILE_PATH="coverage/saas_cardservice@All_features_in_features__saas_cardservice.rcov" NAME="All features in features: saas_cardservice Coverage Results" MODIFIED="1607447471663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
+    <SUITE FILE_PATH="coverage/saas_cardservice@CreateCard_feature.rcov" NAME="CreateCard.feature Coverage Results" MODIFIED="1607447490046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="saas_cardservice" />
   </component>
 </project>

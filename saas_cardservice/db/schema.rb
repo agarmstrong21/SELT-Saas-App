@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2020_12_03_232024) do
     t.index ["pile_id"], name: "index_cards_on_pile_id"
   end
 
-
   create_table "piles", force: :cascade do |t|
     t.string "Name", null: false
     t.string "pile_type", null: false
