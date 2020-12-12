@@ -12,8 +12,7 @@ Here are the roles for each member of Team 6:
 - Scrum Team Members
 	- Kayla Felderman
 	- Jason Rathjen
-	- Kane Templeton
-
+	
 ### Meetings
 Meetings will be held on Teams. Schedule is TBD.
 ### Group Communication
