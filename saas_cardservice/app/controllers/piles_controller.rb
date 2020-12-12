@@ -59,6 +59,8 @@ class PilesController < ApplicationController
       move_card
     elsif params[:move_card_from_hand]
       move_card_from_hand
+    elsif params[:shuffle_cards]
+      shuffle
     end
   end
 
@@ -86,6 +88,14 @@ class PilesController < ApplicationController
     card.update_attribute(:pile_id, Pile.find_by(Name: pile_hash[:pile_to]).id)
     pile_position = Pile.find_by(Name: pile_hash[:pile_to]).cards.length-1
     card.update_attribute(:position, pile_position)
+    redirect_to home_home_path
+  end
+
+  def shuffle
+    @form_token = form_authenticity_token
+    pile_hash = params[:pile]
+    pile = Pile.find_by(Name: pile_hash[:shuffle_pile])
+    pile.shuffle_pile
     redirect_to home_home_path
   end
 

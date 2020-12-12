@@ -17,7 +17,7 @@
     <%= form_tag piles_button_press_path, :class => 'form' %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= label :pile, :visible, 'Select the pile to switch visibility.' %>
-    <%= select :pile, :visible, Pile.all.collect { |pile| [pile.Name] } %>
+    <%= select :pile, :visible, Pile.all.where.not(pile_type: 'hand').collect { |pile| [pile.Name] } %>
     <%= submit_tag "Change Visibility", name: 'change_visibility' %>
   </div>
   <div>
@@ -32,11 +32,18 @@
   <div>
     <%= form_tag piles_button_press_path, :class => 'form' %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= label :pile, :card_selected, 'Move card from ' %>
+    <%= label :pile, :card_selected, 'Move card ' %>
     <%= select :pile, :card_selected, Pile.find_by(pile_type: 'hand').cards.collect { |card| [card.image] } %>
     <%= label :pile, :pile_to, ' to ' %>
     <%= select :pile, :pile_to, Pile.all.collect { |pile| [pile.Name] } %>
     <%= submit_tag "Move Card From Hand", name: 'move_card_from_hand' %>
+  </div>
+  <div>
+    <%= form_tag piles_button_press_path, :class => 'form' %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= label :pile, :shuffle_pile, 'Pile to Shuffle ' %>
+    <%= select :pile, :shuffle_pile, Pile.all.where.not(pile_type: 'hand').collect { |pile| [pile.Name] } %>
+    <%= submit_tag "Shuffle", name: 'shuffle_cards' %>
   </div>
 </div>
 <div style="min-height:8vh"></div>
@@ -99,9 +106,6 @@
       <!-- TODO: an if statement that will only show the player's hand that has the current session_token to match.-->
       <% hand.cards.each do |card| %>
         <div class="pile" style="background-image: url(<%= image_url(card.image) %>); background-repeat: no-repeat;">
-          <div style="padding: 25px">
-            <div style="background: #000000; border-radius: 5px"><%= card.image %> </div>
-          </div>
         </div>
       <% end %>
     <% end %>

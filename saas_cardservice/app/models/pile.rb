@@ -52,8 +52,7 @@ class Pile < ApplicationRecord
     until list_of_cards.empty?
       current = list_of_cards.delete(list_of_cards.sample)
       card_to_update = Card.find(current.id)
-      card_to_update.position = index
-      card_to_update.save
+      card_to_update.update_attribute(:position, index)
       index += 1
     end
   end

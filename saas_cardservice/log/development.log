@@ -39708,3 +39708,1146 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 820ms (Views: 813.3ms | ActiveRecord: 5.2ms | Allocations: 64329)
 
 
+Started GET "/" for ::1 at 2020-12-12 14:14:01 -0600
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 2032.9ms | Allocations: 188136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2125ms (Views: 2096.2ms | ActiveRecord: 11.0ms | Allocations: 200238)
+
+
+Started GET "/" for ::1 at 2020-12-12 14:14:28 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (1.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 89.6ms | Allocations: 19708)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 186ms (Views: 176.9ms | ActiveRecord: 5.7ms | Allocations: 28044)
+
+
+Started POST "/piles/button_press" for ::1 at 2020-12-12 14:15:00 -0600
+Processing by PilesController#button_press as HTML
+  Parameters: {"authenticity_token"=>"8Jo/nqVsnaN4ckHPB1VS5yT4UCUFo5vPyEEYouIqBUeMNRE9//ZYB1hB+fVB9L0KA9dqTQJmI/U4AwnYgWA6ag==", "pile"=>{"visible"=>"Main Deck", "deck_from"=>"Main Deck", "deck_to"=>"Main Deck", "card_selected"=>"QH.png", "pile_to"=>"Main Deck", "shuffle_pile"=>"Main Deck"}, "shuffle_cards"=>"Shuffle"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Main Deck"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:97:in `shuffle'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 1]]
+  ↳ app/models/pile.rb:50:in `shuffle_pile'
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 1.0], ["updated_at", "2020-12-12 20:15:00.493333"], ["id", 19]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 2.0], ["updated_at", "2020-12-12 20:15:00.515569"], ["id", 30]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 3.0], ["updated_at", "2020-12-12 20:15:00.537951"], ["id", 44]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.8ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 4.0], ["updated_at", "2020-12-12 20:15:00.564016"], ["id", 13]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.6ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 5.0], ["updated_at", "2020-12-12 20:15:00.597056"], ["id", 38]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 6.0], ["updated_at", "2020-12-12 20:15:00.615042"], ["id", 41]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 7.0], ["updated_at", "2020-12-12 20:15:00.640280"], ["id", 9]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 8.0], ["updated_at", "2020-12-12 20:15:00.662037"], ["id", 11]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 9.0], ["updated_at", "2020-12-12 20:15:00.679028"], ["id", 16]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.7ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 10.0], ["updated_at", "2020-12-12 20:15:00.697687"], ["id", 21]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 11.0], ["updated_at", "2020-12-12 20:15:00.719536"], ["id", 46]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 12.0], ["updated_at", "2020-12-12 20:15:00.738859"], ["id", 32]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 13.0], ["updated_at", "2020-12-12 20:15:00.757538"], ["id", 31]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 14.0], ["updated_at", "2020-12-12 20:15:00.781383"], ["id", 2]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 15.0], ["updated_at", "2020-12-12 20:15:00.798756"], ["id", 33]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 16.0], ["updated_at", "2020-12-12 20:15:00.818193"], ["id", 5]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 17.0], ["updated_at", "2020-12-12 20:15:00.847902"], ["id", 15]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 18.0], ["updated_at", "2020-12-12 20:15:00.873871"], ["id", 22]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 19.0], ["updated_at", "2020-12-12 20:15:00.895051"], ["id", 10]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.6ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 20.0], ["updated_at", "2020-12-12 20:15:00.918794"], ["id", 37]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 21.0], ["updated_at", "2020-12-12 20:15:00.942140"], ["id", 14]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.6ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 22.0], ["updated_at", "2020-12-12 20:15:00.963325"], ["id", 39]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 23.0], ["updated_at", "2020-12-12 20:15:00.989659"], ["id", 42]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 24.0], ["updated_at", "2020-12-12 20:15:01.010633"], ["id", 27]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.5ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 25.0], ["updated_at", "2020-12-12 20:15:01.032482"], ["id", 12]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 26.0], ["updated_at", "2020-12-12 20:15:01.057843"], ["id", 28]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 27.0], ["updated_at", "2020-12-12 20:15:01.081779"], ["id", 6]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 28.0], ["updated_at", "2020-12-12 20:15:01.105934"], ["id", 20]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 29.0], ["updated_at", "2020-12-12 20:15:01.126819"], ["id", 8]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.6ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 30.0], ["updated_at", "2020-12-12 20:15:01.148441"], ["id", 25]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.8ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 31.0], ["updated_at", "2020-12-12 20:15:01.175321"], ["id", 4]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 32.0], ["updated_at", "2020-12-12 20:15:01.195628"], ["id", 29]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 33.0], ["updated_at", "2020-12-12 20:15:01.213457"], ["id", 36]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 34.0], ["updated_at", "2020-12-12 20:15:01.233127"], ["id", 7]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (17.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 35.0], ["updated_at", "2020-12-12 20:15:01.258310"], ["id", 18]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 36.0], ["updated_at", "2020-12-12 20:15:01.277026"], ["id", 35]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 37.0], ["updated_at", "2020-12-12 20:15:01.300135"], ["id", 23]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 38.0], ["updated_at", "2020-12-12 20:15:01.322180"], ["id", 3]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 39.0], ["updated_at", "2020-12-12 20:15:01.340426"], ["id", 24]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 40.0], ["updated_at", "2020-12-12 20:15:01.358739"], ["id", 34]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 41.0], ["updated_at", "2020-12-12 20:15:01.383370"], ["id", 17]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 42.0], ["updated_at", "2020-12-12 20:15:01.404506"], ["id", 45]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 43.0], ["updated_at", "2020-12-12 20:15:01.423085"], ["id", 40]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 44.0], ["updated_at", "2020-12-12 20:15:01.446985"], ["id", 43]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 45.0], ["updated_at", "2020-12-12 20:15:01.474878"], ["id", 26]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 1011ms (ActiveRecord: 663.7ms | Allocations: 154663)
+
+
+Started GET "/home/home" for ::1 at 2020-12-12 14:15:01 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 47.4ms | Allocations: 18571)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 94.3ms | ActiveRecord: 3.7ms | Allocations: 25705)
+
+
+Started GET "/home/home" for ::1 at 2020-12-12 14:15:58 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mPile Load (1.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 65.6ms | Allocations: 19737)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 128ms (Views: 114.1ms | ActiveRecord: 5.1ms | Allocations: 28449)
+
+
+Started GET "/home/home" for ::1 at 2020-12-12 14:16:41 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 75.2ms | Allocations: 30534)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 129.2ms | ActiveRecord: 5.8ms | Allocations: 40122)
+
+
+Started POST "/piles/button_press" for ::1 at 2020-12-12 14:16:55 -0600
+Processing by PilesController#button_press as HTML
+  Parameters: {"authenticity_token"=>"2jY+CobwtXkj74zEqS+pniTZMIamYXfIOWj1yDRd7yWmmRCp3Gpw3QPcNP7vjkZzA/YK7qGkz/LJKuSyVxfQCA==", "pile"=>{"visible"=>"Deck2", "deck_from"=>"Main Deck", "deck_to"=>"Main Deck", "card_selected"=>"QH.png", "pile_to"=>"Main Deck", "shuffle_pile"=>"Main Deck"}, "change_visibility"=>"Change Visibility"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Deck2"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:70:in `change_visibility'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/piles_controller.rb:71:in `change_visibility'
+  [1m[36mPile Update (1.0ms)[0m  [1m[33mUPDATE "piles" SET "visible" = ?, "updated_at" = ? WHERE "piles"."id" = ?[0m  [["visible", 1], ["updated_at", "2020-12-12 20:16:55.814140"], ["id", 2]]
+  ↳ app/controllers/piles_controller.rb:71:in `change_visibility'
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/piles_controller.rb:71:in `change_visibility'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 24ms (ActiveRecord: 13.7ms | Allocations: 3936)
+
+
+Started GET "/home/home" for ::1 at 2020-12-12 14:16:55 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.7ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 80.6ms | Allocations: 20755)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 129.1ms | ActiveRecord: 6.8ms | Allocations: 28323)
+
+
+Started POST "/piles/button_press" for ::1 at 2020-12-12 14:17:04 -0600
+Processing by PilesController#button_press as HTML
+  Parameters: {"authenticity_token"=>"bHIgyiwqrMm0Dpg/87/8HVSI7rOHTS6RV0k18DC/bMMQ3Q5pdrBpbZQ9IAW1HhPwc6fU24CIlqunCySKU/VT7g==", "pile"=>{"visible"=>"Main Deck", "deck_from"=>"Main Deck", "deck_to"=>"Main Deck", "card_selected"=>"QH.png", "pile_to"=>"Main Deck", "shuffle_pile"=>"Deck2"}, "shuffle_cards"=>"Shuffle"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  [1m[36mPile Load (0.6ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."Name" = ? LIMIT ?[0m  [["Name", "Deck2"], ["LIMIT", 1]]
+  ↳ app/controllers/piles_controller.rb:97:in `shuffle'
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 2]]
+  ↳ app/models/pile.rb:50:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (8.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 0.0], ["updated_at", "2020-12-12 20:17:04.541223"], ["id", 67]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 1.0], ["updated_at", "2020-12-12 20:17:04.567125"], ["id", 101]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.5ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 2.0], ["updated_at", "2020-12-12 20:17:04.590534"], ["id", 82]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 3.0], ["updated_at", "2020-12-12 20:17:04.612649"], ["id", 100]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 4.0], ["updated_at", "2020-12-12 20:17:04.633450"], ["id", 63]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 5.0], ["updated_at", "2020-12-12 20:17:04.655606"], ["id", 80]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 6.0], ["updated_at", "2020-12-12 20:17:04.681700"], ["id", 72]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 7.0], ["updated_at", "2020-12-12 20:17:04.699187"], ["id", 53]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 8.0], ["updated_at", "2020-12-12 20:17:04.728522"], ["id", 60]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 9.0], ["updated_at", "2020-12-12 20:17:04.747179"], ["id", 102]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 10.0], ["updated_at", "2020-12-12 20:17:04.762865"], ["id", 76]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 11.0], ["updated_at", "2020-12-12 20:17:04.777379"], ["id", 65]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (2.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 12.0], ["updated_at", "2020-12-12 20:17:04.796688"], ["id", 81]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 13.0], ["updated_at", "2020-12-12 20:17:04.817003"], ["id", 78]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 14.0], ["updated_at", "2020-12-12 20:17:04.834278"], ["id", 87]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 15.0], ["updated_at", "2020-12-12 20:17:04.854082"], ["id", 57]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 16.0], ["updated_at", "2020-12-12 20:17:04.873455"], ["id", 88]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 17.0], ["updated_at", "2020-12-12 20:17:04.887456"], ["id", 58]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 18.0], ["updated_at", "2020-12-12 20:17:04.903887"], ["id", 56]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (4.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 19.0], ["updated_at", "2020-12-12 20:17:04.924229"], ["id", 75]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 20.0], ["updated_at", "2020-12-12 20:17:04.947669"], ["id", 55]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.4ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 21.0], ["updated_at", "2020-12-12 20:17:04.967504"], ["id", 90]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.4ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 22.0], ["updated_at", "2020-12-12 20:17:04.986754"], ["id", 66]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 23.0], ["updated_at", "2020-12-12 20:17:05.007337"], ["id", 73]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 24.0], ["updated_at", "2020-12-12 20:17:05.024203"], ["id", 69]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 25.0], ["updated_at", "2020-12-12 20:17:05.040329"], ["id", 79]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.5ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 26.0], ["updated_at", "2020-12-12 20:17:05.059263"], ["id", 84]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 27.0], ["updated_at", "2020-12-12 20:17:05.077482"], ["id", 61]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 28.0], ["updated_at", "2020-12-12 20:17:05.093962"], ["id", 54]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 29.0], ["updated_at", "2020-12-12 20:17:05.108485"], ["id", 74]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 30.0], ["updated_at", "2020-12-12 20:17:05.127061"], ["id", 77]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.4ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 31.0], ["updated_at", "2020-12-12 20:17:05.144470"], ["id", 97]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 32.0], ["updated_at", "2020-12-12 20:17:05.165180"], ["id", 83]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 33.0], ["updated_at", "2020-12-12 20:17:05.185114"], ["id", 70]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 34.0], ["updated_at", "2020-12-12 20:17:05.202208"], ["id", 93]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 35.0], ["updated_at", "2020-12-12 20:17:05.218446"], ["id", 91]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.4ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 36.0], ["updated_at", "2020-12-12 20:17:05.235927"], ["id", 98]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 37.0], ["updated_at", "2020-12-12 20:17:05.265544"], ["id", 62]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 38.0], ["updated_at", "2020-12-12 20:17:05.283149"], ["id", 104]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (0.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 40.0], ["updated_at", "2020-12-12 20:17:05.304909"], ["id", 103]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 41.0], ["updated_at", "2020-12-12 20:17:05.325085"], ["id", 71]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 42.0], ["updated_at", "2020-12-12 20:17:05.343671"], ["id", 59]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.1ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 43.0], ["updated_at", "2020-12-12 20:17:05.363122"], ["id", 94]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 44.0], ["updated_at", "2020-12-12 20:17:05.379656"], ["id", 89]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.2ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 45.0], ["updated_at", "2020-12-12 20:17:05.403865"], ["id", 95]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.3ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 47.0], ["updated_at", "2020-12-12 20:17:05.421464"], ["id", 96]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 48.0], ["updated_at", "2020-12-12 20:17:05.437618"], ["id", 85]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.9ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 49.0], ["updated_at", "2020-12-12 20:17:05.458675"], ["id", 64]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 50.0], ["updated_at", "2020-12-12 20:17:05.478661"], ["id", 86]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/models/pile.rb:54:in `shuffle_pile'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[36mCard Update (1.0ms)[0m  [1m[33mUPDATE "cards" SET "position" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["position", 51.0], ["updated_at", "2020-12-12 20:17:05.496344"], ["id", 68]]
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/pile.rb:55:in `shuffle_pile'
+Redirected to http://localhost:3000/home/home
+Completed 302 Found in 984ms (ActiveRecord: 622.8ms | Allocations: 160009)
+
+
+Started GET "/home/home" for ::1 at 2020-12-12 14:17:05 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.3ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 59.9ms | Allocations: 20990)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 111.5ms | ActiveRecord: 4.0ms | Allocations: 28128)
+
+
+Started GET "/home/home" for ::1 at 2020-12-12 14:18:35 -0600
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "AdUvHJUwJTUCDj9nzZ0FQg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `set_current_user'
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mPile Load (0.4ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:20:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:27:in `collect'
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:29:in `collect'
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ? LIMIT ?[0m  [["pile_type", "hand"], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:36
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:36:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles"[0m
+  ↳ app/views/home/home.html.erb:38:in `collect'
+  [1m[36mCACHE Pile Load (0.0ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" != ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:45:in `collect'
+  [1m[36mPile Load (0.5ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "deck"]]
+  ↳ app/views/home/home.html.erb:54
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:55
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:56
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "sink"]]
+  ↳ app/views/home/home.html.erb:81
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY "cards"."id" ASC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:82
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ? ORDER BY position DESC LIMIT ?[0m  [["pile_id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:83
+  [1m[36mPile Load (0.2ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."pile_type" = ?[0m  [["pile_type", "hand"]]
+  ↳ app/views/home/home.html.erb:105
+  [1m[36mCACHE Card Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."pile_id" = ?[0m  [["pile_id", 5]]
+  ↳ app/views/home/home.html.erb:107
+  Rendered home/home.html.erb within layouts/application (Duration: 59.1ms | Allocations: 21868)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 106.6ms | ActiveRecord: 5.7ms | Allocations: 30168)
+
+
