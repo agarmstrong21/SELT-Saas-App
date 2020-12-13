@@ -52,7 +52,13 @@
   <h2>Decks</h2>
   <div class="piles">
     <% Pile.where(pile_type: 'deck').each do |deck| %>
-      <% if deck.visible && !deck.cards.first.nil? %>
+      <% if deck.cards.first.nil? %>
+        <div class="pile" style="background-color: #cababa">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= deck.Name  %></div>
+          </div>
+        </div>
+      <% elsif deck.visible && !deck.cards.first.nil? %>
         <div class="pile" style="background-image: url(<%= image_url(deck.cards.order("position DESC").first.image) %>); background-repeat: no-repeat;">
           <div style="padding: 25px">
             <div style="background: #000000; border-radius: 5px"><%= deck.Name %></div>
@@ -79,7 +85,13 @@
   <h2>Discard Piles</h2>
   <div class="piles">
     <% Pile.where(pile_type: 'sink').each do |sink| %>
-      <% if sink.visible && !sink.cards.first.nil? %>
+      <% if sink.cards.first.nil? %>
+        <div class="pile" style="background-color: #cababa">
+          <div style="padding: 25px">
+            <div style="background: #000000; border-radius: 5px"><%= sink.Name  %></div>
+          </div>
+        </div>
+      <% elsif sink.visible %>
         <div class="pile" style="background-image: url(<%= image_url(sink.cards.order("position DESC").first.image) %>); background-repeat: no-repeat;">
           <div style="padding: 25px">
             <div style="background: #000000; border-radius: 5px"><%= sink.Name %></div>
