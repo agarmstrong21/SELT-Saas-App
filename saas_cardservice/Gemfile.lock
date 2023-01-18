@@ -105,7 +105,7 @@ GEM
     cucumber-messages (13.1.0)
       protobuf-cucumber (~> 3.10, >= 3.10.8)
     cucumber-rails (2.2.0)
-      capybara (>= 2.18)
+      capybara (>= 2.18, < 4)
       cucumber (>= 3.0.2, < 6)
       mime-types (~> 3.2)
       nokogiri (~> 1.8)
@@ -204,7 +204,7 @@ GEM
     public_suffix (4.0.6)
     puma (4.3.6)
       nio4r (~> 2.0)
-    rack (2.2.3)
+    rack (2.2.6.2)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
